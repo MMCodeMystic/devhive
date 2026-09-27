@@ -5,26 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevHive | Portfolio & Lernreise</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">DevHive</div>
-        <button class="burger-menu" aria-label="Menü öffnen">
-            <svg class="hexagon" viewBox="0 0 100 100" width="30" height="30">
-                <polygon points="50,10 90,25 90,75 50,90 10,75 10,25" fill="none" stroke="currentColor" stroke-width="2"/>
-            </svg>
-        </button>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#timelines">Timelines</a></li>
-                <li><a href="#projekte">Projekte</a></li>
-                <li><a href="#einstellungen">Einstellungen</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php
+    $title = "DevHive | Portfolio & Lernreise";
+    include 'header.php';
+    ?>
 
     <main>
         <section class="hero">

@@ -24,3 +24,25 @@
 
 
 
+\### \[1.2] - 27.09.2026
+
+\- \*\*Header \& Navigation\*\*:
+
+&#x20; - Burger-Menü mit Hexagon-Animation für Mobilansicht hinzugefügt.
+
+&#x20; - Responsive Navbar für Desktop/Tablet implementiert.
+
+&#x20; - Navigationselemente (Home, Timelines, Projekte, Einstellungen) verlinkt.
+
+\- \*\*Design\*\*:
+
+&#x20; - Hexagon-Symbol im Burger-Menü mit Rotationseffekt beim Öffnen/Schließen.
+
+&#x20; - Navbar-Stile für Mobil und Desktop angepasst.
+
+
+
+
+
+
+

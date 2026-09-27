@@ -180,3 +180,52 @@ code .js { color: #f5e663; }       /* JavaScript */
         left: -0.5rem;
     }
 }
+.timeline-filters {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--accent-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    background: rgba(26, 58, 92, 0.3);
+}
+
+.filter-btn.active {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+/* HTML-Tags */
+code .tag {
+    color: #ff6b6b;
+}
+/* Attribute */
+code .attr {
+    color: #4ecdc4;
+}
+/* PHP-Code */
+code .php {
+    color: #b180e2;
+}
+/* JavaScript */
+code .js {
+    color: #f5e663;
+}
+/* Kommentare */
+code .comment {
+    color: #888;
+    font-style: italic;
+}
+
