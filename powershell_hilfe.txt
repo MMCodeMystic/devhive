@@ -1,0 +1,32 @@
+Infobox: PowerShell-Muster „Struktur erstellen"
+Baustein	Syntax	Zweck
+Array-Literal	@("a","b")	Liste von Pfaden
+Pipeline	| ForEach-Object { }	Aktion pro Element
+Ordner anlegen	New-Item -Path $_ -ItemType Directory -Force	Existiert schon → kein Fehler
+Leere Datei anlegen	New-Item -Path $_ -ItemType File -Force	Existiert schon → kein Fehler
+Ausgabe unterdrücken	| Out-Null	Konsole bleibt sauber
+
+Prinzip: Ein Array mit allen Pfaden wird per Pipeline an New-Item übergeben. -Force macht das Skript idempotent – es kann beliebig oft ausgeführt werden, ohne Fehler zu werfen. Das Muster skaliert: einfach weitere Pfade in das Array eintragen.
+
+$root = "devhive"
+
+# Ordner
+@("$root",
+  "$root\css",
+  "$root\js",
+  "$root\assets") | ForEach-Object {
+    New-Item -Path $_ -ItemType Directory -Force | Out-Null
+}
+
+# Leere Dateien
+@("$root\index.php",
+  "$root\css\style.css",
+  "$root\js\script.js",
+  "$root\assets\.gitkeep",
+  "$root\README.md",
+  "$root\CHANGELOG.md") | ForEach-Object {
+    New-Item -Path $_ -ItemType File -Force | Out-Null
+}
+
+Write-Host "✅ Struktur erstellt: $root" -ForegroundColor Green
+
