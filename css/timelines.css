@@ -1,0 +1,182 @@
+/* ===== Gemeinsame Timeline-Stile ===== */
+.timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+    margin-top: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-blue);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid transparent;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    box-shadow: 0 0 0 2px var(--bg);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-nr {
+    background: var(--accent-green);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    max-height: 150px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, background 0.3s;
+}
+
+.timeline-content:hover {
+    max-height: 1000px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content p {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Technische Lernreise ===== */
+.timeline-item.technisch {
+    border-left-color: var(--accent-blue);
+}
+
+.timeline-item.technisch::before {
+    background: var(--accent-blue);
+}
+
+/* Code-Hervorhebung (ohne Prism.js) */
+pre {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-top: 0.5rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #d4d4d4;
+    border-left: 3px solid var(--accent-blue);
+}
+
+pre code {
+    color: inherit;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Syntax-Highlighting für HTML/CSS/JS/PHP */
+code .tag { color: #ff6b6b; }      /* HTML-Tags */
+code .attr { color: #4ecdc4; }     /* Attribute */
+code .str { color: #95e1d3; }      /* Strings */
+code .comment { color: #888; }    /* Kommentare */
+code .php { color: #b180e2; }      /* PHP-Code */
+code .js { color: #f5e663; }       /* JavaScript */
+
+/* ===== Historische Timeline ===== */
+.timeline-item.historisch {
+    border-left-color: var(--accent-red);
+}
+
+.timeline-item.historisch::before {
+    background: var(--accent-red);
+}
+
+/* Sepia-Effekt für historische Bilder */
+.timeline-item.historisch img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 1rem;
+    filter: sepia(0.8) contrast(1.2) brightness(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Schraffuren/Muster als rote Fäden */
+.timeline-item.historisch::after {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            var(--accent-red) 0px,
+            var(--accent-red) 5px,
+            transparent 5px,
+            transparent 10px
+        );
+    opacity: 0.5;
+}
+
+/* Kategorien-Farben für historische Timeline */
+.timeline-item.historisch.theorie {
+    border-left-color: var(--accent-blue);
+}
+.timeline-item.historisch.hardware-planung {
+    border-left-color: var(--accent-green);
+}
+.timeline-item.historisch.hardware-herstellung {
+    border-left-color: var(--accent-red);
+}
+
+/* ===== Responsive Anpassungen ===== */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 0.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 1rem;
+    }
+
+    .timeline-item::before {
+        left: -0.5rem;
+    }
+
+    .timeline-item::after {
+        left: -0.5rem;
+    }
+}

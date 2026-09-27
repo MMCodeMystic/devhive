@@ -1,3 +1,37 @@
+/* Lokale Fonts (TTF) */
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter/Inter-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('fonts/RobotoMono/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('fonts/RobotoMono/RobotoMono-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+/* Standard-Schriftarten */
+body {
+    font-family: 'Inter', sans-serif;
+}
+code, pre {
+    font-family: 'Roboto Mono', monospace;
+}
+
 :root {
     /* Dark Mode (Standard) */
     --bg: #2B2B2B;
@@ -195,4 +229,362 @@ body {
     .hero h1 {
         font-size: 2rem;
     }
+}
+
+/* Technische Lernreise: Code-Hervorhebung */
+pre {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    color: #d4d4d4;
+    font-family: 'Roboto Mono', monospace;
+    margin-top: 0.5rem;
+}
+
+pre code {
+    color: inherit;
+    font-family: inherit;
+}
+
+/* Historische Timeline: Sepia-Effekt für Fotos (später) */
+.timeline-item.historisch img {
+    filter: sepia(0.8) contrast(1.2);
+    opacity: 0.9;
+}
+
+/* Timeline-Content (standardmäßig verkürzt) */
+.timeline-content {
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+
+code.language-html .tag { color: #ff6b6b; } /* HTML-Tags */
+code.language-html .attr { color: #4ecdc4; } /* Attribute */
+code.language-html .str { color: #95e1d3; } /* Strings */
+
+/* ===== Platonische Körper (Wireframe) ===== */
+.wireframe-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.platonische-koerper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotateBody 40s linear infinite;
+}
+
+/* Gemeinsame Stile für alle Körper */
+.platonische-koerper > div {
+    position: absolute;
+    border: 1px solid var(--accent-blue);
+    opacity: 0.8;
+}
+
+/* 1. Tetraeder (4 Flächen) */
+.platonische-koerper.tetraeder > div {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid var(--accent-blue);
+    top: 25px;
+    left: 25px;
+    transform: rotateX(70deg) rotateY(45deg);
+}
+.platonische-koerper.tetraeder > div:nth-child(2) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+}
+.platonische-koerper.tetraeder > div:nth-child(3) {
+    transform: rotateX(70deg) rotateY(-45deg);
+}
+.platonische-koerper.tetraeder > div:nth-child(4) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(70deg) rotateY(-45deg);
+}
+
+/* 2. Würfel (6 Flächen) */
+.platonische-koerper.wuerfel > div {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--accent-blue);
+}
+.platonische-koerper.wuerfel > div:nth-child(1) {
+    transform: rotateY(0deg) translateZ(25px);
+}
+.platonische-koerper.wuerfel > div:nth-child(2) {
+    transform: rotateY(90deg) translateZ(25px);
+}
+.platonische-koerper.wuerfel > div:nth-child(3) {
+    transform: rotateY(180deg) translateZ(25px);
+}
+.platonische-koerper.wuerfel > div:nth-child(4) {
+    transform: rotateY(270deg) translateZ(25px);
+}
+.platonische-koerper.wuerfel > div:nth-child(5) {
+    transform: rotateX(90deg) translateZ(25px);
+}
+.platonische-koerper.wuerfel > div:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(25px);
+}
+
+/* 3. Oktaeder (8 Flächen) */
+.platonische-koerper.oktaeder > div {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid var(--accent-blue);
+    top: 20px;
+    left: 20px;
+}
+.platonische-koerper.oktaeder > div:nth-child(1) {
+    transform: rotateX(45deg) rotateY(45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(2) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(45deg) rotateY(45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(3) {
+    transform: rotateX(45deg) rotateY(-45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(4) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(45deg) rotateY(-45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(5) {
+    transform: rotateX(-45deg) rotateY(45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(6) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(-45deg) rotateY(45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(7) {
+    transform: rotateX(-45deg) rotateY(-45deg);
+}
+.platonische-koerper.oktaeder > div:nth-child(8) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(-45deg) rotateY(-45deg);
+}
+
+/* 4. Dodekaeder (12 Flächen - vereinfacht als 5 Ecken) */
+.platonische-koerper.dodekaeder > div {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent-blue);
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateZ(15px);
+}
+.platonische-koerper.dodekaeder > div:nth-child(1) {
+    transform: rotateY(0deg) translateZ(15px);
+}
+.platonische-koerper.dodekaeder > div:nth-child(2) {
+    transform: rotateY(72deg) translateZ(15px);
+}
+.platonische-koerper.dodekaeder > div:nth-child(3) {
+    transform: rotateY(144deg) translateZ(15px);
+}
+.platonische-koerper.dodekaeder > div:nth-child(4) {
+    transform: rotateY(216deg) translateZ(15px);
+}
+.platonische-koerper.dodekaeder > div:nth-child(5) {
+    transform: rotateY(288deg) translateZ(15px);
+}
+
+/* 5. Ikosaeder (20 Flächen - vereinfacht als 10 Dreiecke) */
+.platonische-koerper.ikosaeder > div {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid var(--accent-blue);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.platonische-koerper.ikosaeder > div:nth-child(1) {
+    transform: rotateX(30deg) rotateY(0deg);
+}
+.platonische-koerper.ikosaeder > div:nth-child(2) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(30deg) rotateY(0deg);
+}
+.platonische-koerper.ikosaeder > div:nth-child(3) {
+    transform: rotateX(30deg) rotateY(72deg);
+}
+.platonische-koerper.ikosaeder > div:nth-child(4) {
+    border-bottom-color: transparent;
+    border-top-color: var(--accent-blue);
+    top: 0;
+    transform: rotateX(30deg) rotateY(72deg);
+}
+/* Weitere Dreiecke für Ikosaeder (vereinfacht) */
+.platonische-koerper.ikosaeder > div:nth-child(n+5) {
+    transform: rotateX(-30deg) rotateY(${Math.random() * 360}deg);
+}
+
+/* Animation für Rotation */
+@keyframes rotateBody {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* ===== Header & Navbar ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-red);
+}
+
+.burger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    display: none; /* Standardmäßig versteckt (nur Mobil) */
+    padding: 0.5rem;
+    z-index: 101; /* Über dem Navbar */
+}
+
+.burger-menu[aria-expanded="true"] {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* Navbar (Desktop/Tablet) */
+.navbar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== Burger-Menü für Mobil ===== */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--nav-bg);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 4rem 2rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 100;
+    }
+
+    .navbar.active {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+}
+
+/* Animation für das Hexagon-Symbol */
+.burger-menu[aria-expanded="true"] .hexagon {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+.burger-menu .hexagon {
+    transition: transform 0.3s ease;
 }

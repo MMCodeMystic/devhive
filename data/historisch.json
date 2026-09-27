@@ -1,0 +1,290 @@
+[
+  {
+    "nr": 1,
+    "oberbegriff": "Boolesche Algebra / Logikgatter",
+    "kurze_details": "1847: George Boole formuliert Logik als Algebra mit 0 und 1. AND, OR, NOT reichen für jede logische Operation.",
+    "ausfuehrliche_details": "Booles Werk 'The Mathematical Analysis of Logic' zeigt, dass logische Schlüsse als Gleichungen über zwei Werte dargestellt werden können. Damit wird Logik von Philosophie zur Mathematik. Die drei Gatter AND, OR, NOT sind bis heute die Basis jedes Digitalchips.",
+    "beteiligte": "1 (Boole), später verfeinert von Shannon, Peirce u. a.",
+    "technik_entwicklung": {
+      "schlagwort": "Mathematische Formalisierung",
+      "kurz": "Logik als Algebra mit zwei Zuständen.",
+      "lang": "Boole definierte Operationen (∧, ∨, ¬) über dem Bereich {0, 1}. Claude Shannon (1938) übertrug dies auf elektrische Schaltkreise – der entscheidende Schritt zur Hardware."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Papier & Feder",
+      "kurz": "Manuskript, später Druckerzeugnisse.",
+      "lang": "Keine physische Hardware nötig; reine Abstraktion auf Papier."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 2,
+    "oberbegriff": "Binäres Zahlensystem",
+    "kurze_details": "1679: Leibniz formalisiert das Dualsystem. Jede Zahl als Folge von 0 und 1.",
+    "ausfuehrliche_details": "Leibniz erkannte, dass jede natürliche Zahl eindeutig als Summe von Potenzen von 2 darstellbar ist. Das System war damals philosophisch motiviert, wurde aber 250 Jahre später zur Basis aller Digitaltechnik.",
+    "beteiligte": "1 (Leibniz), unabhängig auch von anderen",
+    "technik_entwicklung": {
+      "schlagwort": "Dualsystem",
+      "kurz": "Zahlen als 0/1-Folgen.",
+      "lang": "Basis-2-System: 5 = 101₂. Ermöglicht die direkte Abbildung auf elektrische Zustände (Spannung an/aus)."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Papier, Stift",
+      "kurz": "Reine Rechenmethode.",
+      "lang": "Keine Hardware erforderlich; mathematische Darstellung auf Papier."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 3,
+    "oberbegriff": "Jacquard-Webstuhl",
+    "kurze_details": "1801: Jacquard-Webstuhl, gesteuert durch Lochkarten. Muster = Programm.",
+    "ausfuehrliche_details": "Der Webstuhl liest Lochkarten: Loch = Faden hebt sich, kein Loch = Faden bleibt. Das Prinzip 'Programm = physikalische Karte' ist der direkte Vorläufer der Rechenlochkarte.",
+    "beteiligte": "~2 (Jacquard + Mechaniker)",
+    "technik_entwicklung": {
+      "schlagwort": "Mechanische Programmierung",
+      "kurz": "Lochkarten steuern Webmuster.",
+      "lang": "Jede Karte = eine Zeile des Musters. Karten werden in Reihen gestapelt. Das Prinzip der sequenziellen, bedingungslosen Abarbeitung ist identisch mit einem Computerprogramm."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Holz, Metall, Weberei",
+      "kurz": "Mechanischer Webstuhl mit Papierkarten.",
+      "lang": "Karten aus Papier, gestanzt mit Stanze. Mechanische Nadeln lesen die Löcher."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 4,
+    "oberbegriff": "Hollerith & Rechenlochkarten",
+    "kurze_details": "1880er: Hollerith entwickelt Lochkarten für die US-Volkszählung. 1896: CTR (→ IBM).",
+    "ausfuehrliche_details": "Die Zählung 1880 dauerte 7 Jahre manuell. Holleriths Lochkartensystem reduzierte die Zeit auf 5 Monate. Die Karten hatten 10 Spalten für Ziffern. Aus CTR wurde 1924 IBM.",
+    "beteiligte": "~10–20 (Hollerith + Team)",
+    "technik_entwicklung": {
+      "schlagwort": "Mechanische Datenverarbeitung",
+      "kurz": "Lochkarten für statistische Auswertung.",
+      "lang": "Karten werden per Hand gestanzt, gelesen durch eine Maschine, die elektrische Kontakte schließt. Erste 'Datenbank' = Stapel von Karten."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Papier, Stanzen, Elektromechanik",
+      "kurz": "Mechanische Lesemaschinen mit elektrischen Kontakten.",
+      "lang": "Papierkarten, Stanzmaschinen, mechanische Leseköpfe mit elektrischen Kontakten; später Elektromechanik."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 5,
+    "oberbegriff": "Babbesche Analytical Engine",
+    "kurze_details": "1837: Babbage entwirft eine allgemeine Rechenmaschine, gesteuert durch Lochkarten.",
+    "ausfuehrliche_details": "Die Analytical Engine hätte als erste universelle Rechenmaschine gelten können. Ada Lovelace schrieb 1843 den ersten bekannten Algorithmus für sie (Bernoulli-Zahlen). Nie vollständig gebaut.",
+    "beteiligte": "~5 (Babbage, Lovelace, Ingenieure)",
+    "technik_entwicklung": {
+      "schlagwort": "Mechanische Universalmaschine",
+      "kurz": "Dampfgetriebene, programmierbare Rechenmaschine.",
+      "lang": "Enthielt 'Mill' (Rechenwerk) und 'Store' (Speicher). Steuerung über Lochkarten. Hätte aus Kupfer und Stahl bestehen sollen, ~15 t."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Präzisionsmechanik, Dampfmaschine",
+      "kurz": "Kupfer, Stahl, Dampf.",
+      "lang": "Präzisionsmechanik, Dampfmaschine, Kupfer, Stahl. Nie in Vollgröße realisiert."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 6,
+    "oberbegriff": "Konrad Zuse – Z1 / Z3",
+    "kurze_details": "1936–1941: Zuse baut mechanische (Z1) und elektromechanische (Z3) Rechner.",
+    "ausfuehrliche_details": "Z1 (1938) nutzte mechanische Relais, Z3 (1941) elektromechanische Relais und war der erste funktionierende programmgesteuerte Rechner. Zuse erkannte die Notwendigkeit von binärer Arithmetik und schuf die erste Programmiersprache (Plankalkül, 1943).",
+    "beteiligte": "~1–2 (Zuse + Assistent)",
+    "technik_entwicklung": {
+      "schlagwort": "Elektromechanischer Rechner",
+      "kurz": "Relais-basierter, programmierbarer Rechner.",
+      "lang": "Z3: 2600 Relais, 5-Bit-Wörter, ~5 Operationen/Sekunde. Programmierung über Lochstreifen (35-mm-Film mit Löchern)."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Relais, Drähte, Filmstreifen",
+      "kurz": "Handgefertigt in Berlin.",
+      "lang": "Relais, Drähte, 35-mm-Filmstreifen mit Löchern; handgefertigt in Zuses Werkstatt in Berlin."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 7,
+    "oberbegriff": "Erste elektronische Logikgatter",
+    "kurze_details": "1924: Bohes AND-Gatter. 1938: Shannons Dissertation formalisiert Logikgatter als Schalter.",
+    "ausfuehrliche_details": "Shannon zeigte in seiner Harvard-Dissertation, dass jede boolesche Funktion durch eine Kombination von Relais (später Transistoren) realisiert werden kann. Damit war der Weg zu elektronischen Rechnern frei.",
+    "beteiligte": "~2 (Bohe, Shannon)",
+    "technik_entwicklung": {
+      "schlagwort": "Elektrische Logik",
+      "kurz": "Relais/Valven als Logikgatter.",
+      "lang": "Ein Relais = ein Schalter, der bei Stromfluss schließt (AND). Kombinationen ergeben OR, NOT. Später: Trioden, dann Transistoren."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Relais, Vakuumröhren",
+      "kurz": "Kupfer, Eisen, Spulen, Glas, Wolfram.",
+      "lang": "Relais (Kupfer, Eisen, Spulen), Vakuumröhren (Glas, Wolfram-Filament)."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 8,
+    "oberbegriff": "ENIAC",
+    "kurze_details": "1945: Erster elektronischer, programmierbarer Rechner. 18.000 Röhren, 30 t.",
+    "ausfuehrliche_details": "Gebaut von Eckert & Mauchly am Moore College für ballistische Berechnungen. Programmierung durch Verkabelung und Schalter – kein gespeicherter Speicher. 6 Frauen (McNulty, Jennings, Snyder, Meltzer, Bilas, Lichterman) waren die ersten Programmiererinnen.",
+    "beteiligte": "~150 (Entwicklungsteam) + 6 Programmiererinnen",
+    "technik_entwicklung": {
+      "schlagwort": "Elektronischer Rechner mit Röhren",
+      "kurz": "18.000 Vakuumröhren, Lochkarten für I/O, manuelle Verkabelung.",
+      "lang": "100 Fuß lang, 10 Fuß hoch. ~5.000 Additionen/Sekunde. 6.000 Schalter für Konstanten. Programmierung dauerte bis zu 2 Tage. 1946: erste öffentliche Demo."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Vakuumröhren, Kondensatoren, Kupferdraht",
+      "kurz": "Handverdrahtet, Glas, Wolfram.",
+      "lang": "Vakuumröhren (Glas, Wolfram), Kondensatoren, Widerstände, Kupferdraht; handverdrahtet in großen Schränken."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 9,
+    "oberbegriff": "Von-Neumann-Architektur / Stored-Program",
+    "kurze_details": "1945: Von Neumann beschreibt EDVAC-Plan: Programm und Daten im selben Speicher.",
+    "ausfuehrliche_details": "Das Prinzip: Der Computer liest Befehle aus dem Speicher wie Daten. Damit wird der Rechner universell. Fast alle heutigen Computer folgen diesem Modell.",
+    "beteiligte": "~5 (von Neumann, Goldstine, Eckert, Mauchly)",
+    "technik_entwicklung": {
+      "schlagwort": "Gespeicherter Programmgedanke",
+      "kurz": "Programm liegt im Speicher, nicht in der Verkabelung.",
+      "lang": "Befehle und Daten werden beide als Binärzahlen im Speicher gehalten. Die CPU holt Befehle, dekodiert, führt aus. Dieser Zyklus (Fetch-Decode-Execute) ist bis heute identisch."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Kondensatorspeicher, Magnetkern",
+      "kurz": "Gleiche Technik wie ENIAC, aber mit Speicher.",
+      "lang": "Kondensatorkapazitäten, später Magnetkern-Speicher (kleine Ferritringe mit Draht durchgesteckt)."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 10,
+    "oberbegriff": "Assembler",
+    "kurze_details": "Ende 1940er: Mnemoniken (ADD, SUB, MOV) ersetzen Binärzahlen.",
+    "ausfuehrliche_details": "Kathleen Booth (1950) entwickelte Assembler für die Manchester Baby. Statt '0001 0010' schreibt man 'ADD R1, R2'. Der Assembler übersetzt 1:1 in Maschinencode. Erstmals 'lesbarer' Code.",
+    "beteiligte": "~5–10 (Booth, Wilkes u. a.)",
+    "technik_entwicklung": {
+      "schlagwort": "Symbolische Programmierung",
+      "kurz": "Kürzel für Maschinenbefehle, 1:1-Übersetzung.",
+      "lang": "Jeder Assemblerbefehl entspricht genau einem Maschinenbefehl. Erleichtert Adressierung (Labels statt Hexzahlen) und Lesbarkeit. Kein Hochsprach-Abstraktionslevel."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Papier, Karte",
+      "kurz": "Assembler selbst in Assembler oder Maschinencode geschrieben.",
+      "lang": "Programmierung auf Lochkarten oder Papierband; Assembler in Assembler/Maschinencode implementiert."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 11,
+    "oberbegriff": "Fortran / COBOL",
+    "kurze_details": "1957: Fortran (IBM, Backus). 1959: COBOL. Erste Hochsprachen.",
+    "ausfuehrliche_details": "Fortran (FORmula TRANslation) war die erste praktisch einsetzbare Hochsprache. Erlaubte mathematische Formeln in lesbarem Code. COBOL war für Geschäftsprozesse. Beide erforderten einen Compiler – ein neues Werkzeug.",
+    "beteiligte": "~50–100 (IBM-Teams)",
+    "technik_entwicklung": {
+      "schlagwort": "Hochsprache + Compiler",
+      "kurz": "Menschliche Sprache → Maschinencode via Compiler.",
+      "lang": "Der Compiler übersetzt das gesamte Programm in Maschinencode. Erstmals konnte man ohne Kenntnis der Hardware programmieren. Fortran dominierte Wissenschaft, COBOL die Verwaltung."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Compiler in Assembler, Lochkarten",
+      "kurz": "Programme auf Lochkarten oder Papierband.",
+      "lang": "Compiler in Assembler/Maschinencode; Programme auf Lochkarten oder Papierband eingegeben."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 12,
+    "oberbegriff": "C-Sprache",
+    "kurze_details": "1972: Dennis Ritchie entwickelt C an den Bell Labs. 1973: Unix-Kernel in C neu geschrieben.",
+    "ausfuehrliche_details": "C kombiniert Hochsprache-Abstraktion mit direktem Hardware-Zugriff (Zeiger, Speicher). Unix wurde in C portiert – das erste OS, das plattformunabhängig war. C wurde die Sprache der Systemprogrammierung.",
+    "beteiligte": "~3–5 (Ritchie, Thompson, Kernighan)",
+    "technik_entwicklung": {
+      "schlagwort": "Systemprogrammiersprache",
+      "kurz": "Kompilierte Sprache mit Zeigern, portabel, nah am Hardware-Level.",
+      "lang": "C hat keine Laufzeitumgebung, kein Garbage Collection. Der Programmierer verwaltet Speicher selbst (malloc/free). Zeiger erlauben direkten Speicherzugriff. C ist die Basis von C++, Java, JavaScript, Python (CPython)."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Compiler in C (self-hosting)",
+      "kurz": "Unix auf PDP-11.",
+      "lang": "Compiler in C geschrieben (self-hosting); Unix auf PDP-11 entwickelt und portiert."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 13,
+    "oberbegriff": "C++",
+    "kurze_details": "1983: Bjarne Stroustrup erweitert C um Objekte. 1985: Name C++.",
+    "ausfuehrliche_details": "C++ fügt Klassen, Vererbung, Templates, Operator-Overloading zu C hinzu. Ermöglicht objektorientierte Programmierung ohne Performance-Verlust. Wurde zur dominanten Sprache für Spiele, Embedded, HFT.",
+    "beteiligte": "~5–10 (Stroustrup + Bell Labs Team)",
+    "technik_entwicklung": {
+      "schlagwort": "Objektorientierte C-Erweiterung",
+      "kurz": "C + Klassen, Templates, OOP.",
+      "lang": "C++ ist 'zu groß' – es hat C, OOP, Generische Programmierung, funktionale Features. Kompiliert zu nativem Code. Keine VM. Sehr steile Lernkurve, aber maximale Kontrolle."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Compiler (g++, clang++), Build-Systeme",
+      "kurz": "Make, CMake.",
+      "lang": "Compiler (g++, clang++); Build-Systeme (Make, CMake). Entwicklung auf Workstations, später PC."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 14,
+    "oberbegriff": "Java / Python / Moderne Sprachen",
+    "kurze_details": "1995: Java (Sun). 1991: Python. 2010er: Rust, Go, TypeScript.",
+    "ausfuehrliche_details": "Java: 'Write once, run anywhere' via JVM. Python: Lesbarkeit, Dominanz in ML/Data. Rust: Speicher-Sicherheit ohne GC. Go: Einfachheit, Parallelität. TypeScript: Typsicherheit für Web.",
+    "beteiligte": "~10–100+ (je nach Sprache)",
+    "technik_entwicklung": {
+      "schlagwort": "Hochabstrakte, spezialisierte Sprachen",
+      "kurz": "VM-basiert, interpretiert oder kompiliert; spezialisiert auf Domänen.",
+      "lang": "Java/Python laufen auf einer VM oder Interpreter – plattformunabhängig. Rust wird zu nativem Code kompiliert, aber mit Compiler-geprüfter Speichersicherheit. TypeScript wird zu JavaScript kompiliert."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Compiler/Interpreter in C/C++/Rust",
+      "kurz": "Build-Systeme (Maven, pip, cargo, npm).",
+      "lang": "Compiler/Interpreter in C/C++/Rust; Build-Systeme (Maven, pip, cargo, npm). Entwicklung auf modernen PCs/Servern."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 15,
+    "oberbegriff": "Transistor → IC → SoC",
+    "kurze_details": "1947: Transistor (Bell Labs). 1958: IC (Kilby/Noyce). Heute: >100 Mrd. Transistoren pro Chip.",
+    "ausfuehrliche_details": "Der Transistor ersetzte die Vakuumröhre: kleiner, schneller, zuverlässiger. Der IC integrierte viele Transistoren auf einem Silizium-Chip. Der SoC enthält CPU, GPU, Speichercontroller, I/O – alles auf einem Chip.",
+    "beteiligte": "~10.000+ (Forschung + Fertigung)",
+    "technik_entwicklung": {
+      "schlagwort": "Halbleitertechnik",
+      "kurz": "Von Röhren zu Transistoren zu integrierten Schaltkreisen.",
+      "lang": "Moore's Law (1965): Transistorzahl verdoppelt sich alle ~2 Jahre (bis ~2020). Heute: 5-nm- und 3-nm-Prozesse. Ein moderner Smartphone-Chip hat >100 Mrd. Transistoren."
+    },
+    "technik_herstellung": {
+      "schlagwort": "Silizium-Wafer, Photolithographie",
+      "kurz": "UV/EUV, Doping, Ätzen; Reinräume (Class 100); Fab-Werte >20 Mrd. $.",
+      "lang": "Silizium-Wafer, Photolithographie (UV/EUV), Doping, Ätzen; Reinräume (Class 100); Fab-Werte >20 Mrd. $. Tausende Fachkräfte pro Fab."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  },
+  {
+    "nr": 16,
+    "oberbegriff": "Cloud / KI / Moderne Infrastruktur",
+    "kurze_details": "2006: AWS. 2012: Deep Learning (AlexNet). 2020er: LLMs, KI-Infrastruktur.",
+    "ausfuehrliche_details": "Rechenleistung wird als Dienst verietet. GPU-Cluster mit Tausenden Karten trainieren KI-Modelle. Die Infrastruktur selbst ist ein Programm – 'Infrastructure as Code'.",
+    "beteiligte": "~10.000+ (Firmen, Open Source)",
+    "technik_entwicklung": {
+      "schlagwort": "Verteilte Rechenleistung + KI",
+      "kurz": "Rechenleistung on-demand; KI-Modelle auf GPU-Clustern.",
+      "lang": "Ein LLM-Training erfordert ~10.000 GPUs für Wochen. Die Hardware (GPU, HBM-Speicher, NVLink) ist speziell für parallele Matrixoperationen optimiert. Cloud-Anbieter betreiben Rechenzentren mit >1 Mrd. $ Investition."
+    },
+    "technik_herstellung": {
+      "schlagwort": "GPU, HBM, InfiniBand; Rechenzentren",
+      "kurz": "GPU (Silizium, 4/5-nm), HBM (3D-DRAM), Netzwerkkarten; Strom, Kühlung, Netzwerk.",
+      "lang": "GPU (Silizium, 4/5-nm), HBM (3D-DRAM), Netzwerkkarten (InfiniBand); Rechenzentren: Stromversorgung, Kühlung, Netzwerk-Infrastruktur."
+    },
+    "bild_url":"assets/images/placeholder.jpg"
+  }
+]   
