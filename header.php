@@ -35,7 +35,7 @@
                 <li><a href="timelines_technisch.php">Technische Lernreise</a></li>
                 <li><a href="timelines_historisch.php">Historische IT</a></li>
                 <li><a href="projekte.php">Projekte</a></li>
-                <li><a href="#einstellungen">Einstellungen</a></li>
+                <li><a href="einstellungen.php">Einstellungen</a></li>
             </ul>
         </nav>
     </header>

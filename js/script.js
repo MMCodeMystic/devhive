@@ -164,6 +164,53 @@ async function loadHistorischeTimeline() {
     });
 }
 
+// Theme-Toggle (Dark/Bright Mode)
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeBtn = document.getElementById('dark-mode-btn');
+    const brightModeBtn = document.getElementById('bright-mode-btn');
+    const animationToggle = document.getElementById('animation-toggle');
+
+    if (darkModeBtn && brightModeBtn) {
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.remove('bright-mode');
+            darkModeBtn.classList.add('active');
+            brightModeBtn.classList.remove('active');
+            localStorage.setItem('theme', 'dark');
+        });
+
+        brightModeBtn.addEventListener('click', () => {
+            document.body.classList.add('bright-mode');
+            brightModeBtn.classList.add('active');
+            darkModeBtn.classList.remove('active');
+            localStorage.setItem('theme', 'bright');
+        });
+
+        // Lade gespeichertes Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'bright') {
+            document.body.classList.add('bright-mode');
+            brightModeBtn.classList.add('active');
+            darkModeBtn.classList.remove('active');
+        }
+    }
+
+    // Animationen aktivieren/deaktivieren
+    if (animationToggle) {
+        animationToggle.addEventListener('change', () => {
+            const isChecked = animationToggle.checked;
+            document.body.style.setProperty('--animation-enabled', isChecked ? '1' : '0');
+            localStorage.setItem('animations', isChecked);
+        });
+
+        // Lade gespeicherte Animation-Einstellung
+        const savedAnimations = localStorage.getItem('animations');
+        if (savedAnimations === 'false') {
+            animationToggle.checked = false;
+            document.body.style.setProperty('--animation-enabled', '0');
+        }
+    }
+});
+
 // Footer-Easter Egg
 document.addEventListener('DOMContentLoaded', () => {
     const footerHexagon = document.querySelector('.footer-hexagon');

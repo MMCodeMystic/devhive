@@ -5,7 +5,8 @@
     "kurze_details": "IDE/Editor einrichten",
     "ausfuehrliche_details": "VS Code oder WebStorm installieren, Extensions (Live Server, Prettier), Projektordner anlegen, index.html erstellen.",
     "code": "",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/html_ide.png"
   },
   {
     "nr": 2,
@@ -13,7 +14,8 @@
     "kurze_details": "Dokumentgerüst",
     "ausfuehrliche_details": "DOCTYPE, html, head, body, meta charset, viewport, title. head = Metadaten, body = sichtbarer Inhalt.",
     "code": "<!DOCTYPE html>\n<html lang=\"de\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Meine Seite</title>\n</head>\n<body>\n</body>\n</html>",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/html_dokumentgerüst.png"
   },
   {
     "nr": 3,
@@ -21,7 +23,8 @@
     "kurze_details": "Text & Struktur",
     "ausfuehrliche_details": "h1–h6, p, ul/ol/li, a, strong, em. h1 nur einmal pro Seite.",
     "code": "<h1>Titel</h1>\n<p>Absatz</p>\n<ul><li>Punkt 1</li><li>Punkt 2</li></ul>\n<a href=\"seite.html\">Link</a>",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/html_text.png"
   },
   {
     "nr": 4,
@@ -29,7 +32,8 @@
     "kurze_details": "Bilder, Tabellen, Formulare",
     "ausfuehrliche_details": "img mit alt-Attribut, table/tr/td, form mit input und button. alt ist Pflicht für Barrierefreiheit.",
     "code": "<img src=\"bild.jpg\" alt=\"Beschreibung\">\n<form method=\"POST\" action=\"verarbeiten.php\">\n  <input type=\"text\" name=\"name\">\n  <button type=\"submit\">Senden</button>\n</form>",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/html_bilder.png"
   },
   {
     "nr": 5,
@@ -37,7 +41,9 @@
     "kurze_details": "Semantisches HTML5",
     "ausfuehrliche_details": "header, nav, main, article, section, aside, footer. Besser für SEO, Screenreader, Wartbarkeit als div-Suppe.",
     "code": "<header>...</header>\n<nav>...</nav>\n<main>\n  <article>...</article>\n  <aside>...</aside>\n</main>\n<footer>...</footer>",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/html_semantik.png"
+
   },
   {
     "nr": 6,
@@ -45,7 +51,9 @@
     "kurze_details": "Erste eigene Seite bauen",
     "ausfuehrliche_details": "Komplette index.html mit allen Elementen: Gerüst, Navigation, Artikel, Footer.",
     "code": "<!DOCTYPE html>\n<html lang=\"de\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Meine Seite</title>\n</head>\n<body>\n  <header><h1>Willkommen</h1></header>\n  <nav><a href=\"#home\">Home</a> <a href=\"#about\">Über</a></nav>\n  <main><article><h2>Über mich</h2><p>Hallo, ich lerne Webentwicklung.</p></article></main>\n  <footer><p>&copy; 2026</p></footer>\n</body>\n</html>",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/png"
+
   },
   {
     "nr": 7,
@@ -53,7 +61,9 @@
     "kurze_details": "Im Browser testen & Live-Server",
     "ausfuehrliche_details": "VS Code: Rechtsklick → Open with Live Server. Änderungen speichern → Browser lädt automatisch neu. Alternativ: Datei im Browser öffnen.",
     "code": "",
-    "kategorie": "html"
+    "kategorie": "html",
+    "bild_url": "assets/images/technisch/html_seite.png"
+
   },
   {
     "nr": 8,
@@ -61,7 +71,9 @@
     "kurze_details": "CSS einbinden & Grundregeln",
     "ausfuehrliche_details": "link-Tag im head, Selektor { Eigenschaft: Wert; }. Kaskade: spätere Regeln überschreiben frühere. Spezifität: ID > Klasse > Element.",
     "code": "<link rel=\"stylesheet\" href=\"style.css\">\n/* style.css */\np { color: blue; font-size: 16px; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_einbinden.png"
+
   },
   {
     "nr": 9,
@@ -69,7 +81,9 @@
     "kurze_details": "Box-Model & Abstände",
     "ausfuehrliche_details": "margin, padding, border, width, height. box-sizing: border-box macht width = Inhalt + Padding + Border.",
     "code": "* { box-sizing: border-box; }\n.box { width: 300px; padding: 20px; border: 1px solid #ccc; margin: 10px; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_boxmodel.png"
+
 
   },
   {
@@ -78,7 +92,9 @@
     "kurze_details": "Farben, Schriften, Hintergründe",
     "ausfuehrliche_details": "Hex, rgb, hsl. font-family, font-weight, font-style. background mit Bild, Position, Größe.",
     "code": "body { font-family: 'Segoe UI', sans-serif; color: #333; }\n.hero { background: url('bild.jpg') center/cover; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_farben.png"
+
 
   },
   {
@@ -87,7 +103,9 @@
     "kurze_details": "Flexbox",
     "ausfuehrliche_details": "1D-Layouts. display:flex, justify-content, align-items, gap. Für Zeilen oder Spalten.",
     "code": ".container { display: flex; justify-content: space-between; align-items: center; gap: 10px; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_flexbox.png"
+
 
   },
   {
@@ -96,7 +114,9 @@
     "kurze_details": "CSS Grid",
     "ausfuehrliche_details": "2D-Layouts. grid-template-columns, gap, span. Für komplexe Seitenlayouts.",
     "code": ".grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }\n.wide { grid-column: span 2; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_grid.png"
+
 
   },
   {
@@ -105,7 +125,9 @@
     "kurze_details": "Responsive Design / Media Queries",
     "ausfuehrliche_details": "Mobile-First: Standard = mobil, min-width-Breakpoints für Tablet/Desktop. viewport-Meta ist Pflicht.",
     "code": "@media (min-width: 768px) { .layout { grid-template-columns: 1fr 300px; } }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_responsive.png"
+
 
   },
   {
@@ -114,7 +136,9 @@
     "kurze_details": "Pseudo-Klassen & Hover",
     "ausfuehrliche_details": ":hover, :focus, :nth-child(), ::before, ::after. Für Interaktion und Deko ohne HTML-Extras.",
     "code": "a:hover { text-decoration: underline; }\nli:nth-child(even) { background: #f0f0f0; }\n.box::before { content: \"★\"; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/png"
+
 
   },
   {
@@ -123,7 +147,9 @@
     "kurze_details": "Übergänge & Animationen",
     "ausfuehrliche_details": "transition für flüssige Änderungen, @keyframes + animation für Keyframe-Animationen.",
     "code": ".btn { transition: all 0.3s ease; }\n@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }\n.fade { animation: fadeIn 1s; }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_animationen.png"
+
 
   },
   {
@@ -132,7 +158,9 @@
     "kurze_details": "Variablen & moderne Features",
     "ausfuehrliche_details": ":root { --var: wert; }, var(--var). Ermöglicht Theme-Wechsel, konsistente Werte. Auch clamp(), min(), max().",
     "code": ":root { --primary: #2c3e50; --radius: 8px; }\n.btn { background: var(--primary); border-radius: var(--radius); }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_variablen.png"
+
 
   },
   {
@@ -141,7 +169,9 @@
     "kurze_details": "Kleine Projektseite stylen",
     "ausfuehrliche_details": "Komplettes Styling der HTML-Seite: Header, Nav, Grid-Layout, Responsive Breakpoint.",
     "code": ":root { --primary: #2c3e50; --accent: #3498db; }\n* { margin: 0; padding: 0; box-sizing: border-box; }\nbody { font-family: 'Segoe UI', sans-serif; }\nheader { background: var(--primary); color: white; padding: 20px; }\nmain { display: grid; grid-template-columns: 1fr 300px; gap: 20px; padding: 20px; }\n@media (max-width: 768px) { main { grid-template-columns: 1fr; } }",
-    "kategorie": "css"
+    "kategorie": "css",
+    "bild_url": "assets/images/technisch/css_projekt.png"
+
 
   },
   {
@@ -150,7 +180,9 @@
     "kurze_details": "Seite online stellen",
     "ausfuehrliche_details": "GitHub-Account → Repo anlegen → Dateien hochladen → Settings → Pages → main branch. Live unter username.github.io/repo-name. Lokal testen: Live Server oder Built-in Server in WebStorm.",
     "code": "",
-    "kategorie": "github"
+    "kategorie": "github",
+    "bild_url": "assets/images/technisch/github_account.png"
+
 
   },
   {
@@ -159,7 +191,9 @@
     "kurze_details": "JS einbinden & erste Ausgabe",
     "ausfuehrliche_details": "script-Tag vor </body>. console.log, document.querySelector, textContent.",
     "code": "<script src=\"script.js\"></script>\n// script.js\nconsole.log(\"Hallo\");\ndocument.querySelector('h1').textContent = \"Neu\";",
-    "kategorie": "javascript"
+    "kategorie": "javascript",
+    "bild_url": "assets/images/technisch/js_einbinden.png"
+
 
   },
   {
@@ -168,7 +202,9 @@
     "kurze_details": "Variablen & Events",
     "ausfuehrliche_details": "let, const. addEventListener für click, submit, input.",
     "code": "let count = 0;\ndocument.querySelector('button').addEventListener('click', () => {\n  count++;\n  document.querySelector('#anzeige').textContent = count;\n});",
-    "kategorie": "javascript"
+    "kategorie": "javascript",
+    "bild_url": "assets/images/technisch/js_variablen.png"
+
 
   },
   {
@@ -177,7 +213,9 @@
     "kurze_details": "DOM manipulieren",
     "ausfuehrliche_details": "classList.add/remove, style, createElement, appendChild. Elemente erstellen, ändern, entfernen.",
     "code": "const p = document.createElement('p');\np.textContent = 'Neuer Absatz';\ndocument.querySelector('main').appendChild(p);\n\ndocument.querySelector('.box').classList.add('aktiv');",
-    "kategorie": "javascript"
+    "kategorie": "javascript",
+    "bild_url": "assets/images/technisch/js_dom.png"
+
 
   },
   {
@@ -186,7 +224,9 @@
     "kurze_details": "Formular abfragen",
     "ausfuehrliche_details": "submit-Event, preventDefault, .value lesen. Basis für clientseitige Validierung.",
     "code": "document.querySelector('form').addEventListener('submit', e => {\n  e.preventDefault();\n  const name = document.querySelector('input[name=\"name\"]').value;\n  console.log('Name:', name);\n});",
-    "kategorie": "javascript"
+    "kategorie": "javascript",
+    "bild_url": "assets/images/technisch/js_formular.png"
+
 
   },
   {
@@ -195,7 +235,9 @@
     "kurze_details": "Einfache Interaktivität",
     "ausfuehrliche_details": "Tab-Umschalten, Dark-Mode-Toggle, Counter. Kleine, sofort sichtbare Effekte.",
     "code": "document.querySelector('#dark-toggle').onclick = () => {\n  document.body.classList.toggle('dark');\n};",
-    "kategorie": "javascript"
+    "kategorie": "javascript",
+    "bild_url": "assets/images/technisch/js_interaktivitaet.png"
+
 
   },
   {
@@ -204,7 +246,9 @@
     "kurze_details": "XAMPP installieren & einrichten",
     "ausfuehrliche_details": "XAMPP (Apache + MariaDB + PHP) herunterladen, installieren, im Control Panel Apache & MySQL starten. Test: http://localhost → 'It works!'. PHP-Test: htdocs/test.php mit phpinfo().",
     "code": "<?php phpinfo(); ?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_xampp.png"
+
 
   },
   {
@@ -213,7 +257,9 @@
     "kurze_details": "Erste PHP-Datei",
     "ausfuehrliche_details": "PHP-Code wird serverseitig ausgeführt, nur HTML wird gesendet. Variablen beginnen mit $.",
     "code": "<?php\n$name = \"Welt\";\necho \"Hallo $name\";\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_erste_datei.png"
+
 
   },
   {
@@ -222,7 +268,9 @@
     "kurze_details": "Variablen, Operatoren, Bedingungen",
     "ausfuehrliche_details": "if/else, switch, ===. Arrays mit foreach.",
     "code": "<?php\n$alter = 20;\nif ($alter >= 18) {\n  echo \"volljährig\";\n} else {\n  echo \"minderjährig\";\n}\n$fruits = [\"Apfel\", \"Banane\"];\nforeach ($fruits as $f) { echo $f; }\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_variablen.png"
+
 
   },
   {
@@ -231,7 +279,9 @@
     "kurze_details": "Funktionen & Arrays",
     "ausfuehrliche_details": "function mit return, assoziative Arrays mit =>.",
     "code": "<?php\nfunction begruessung($name) { return \"Hallo, $name!\"; }\necho begruessung(\"Max\");\n$person = [\"name\" => \"Max\", \"alter\" => 25];\necho $person[\"name\"];\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_funktionen.png"
+
 
   },
   {
@@ -240,7 +290,9 @@
     "kurze_details": "Formulare mit PHP auslesen",
     "ausfuehrliche_details": "$_POST bei method=POST, $_GET bei URL-Parameter. Null-koaleszierender Operator als Default.",
     "code": "<?php\n// verarbeiten.php\n$name = $_POST['name'] ?? 'Gast';\necho \"Hallo $name\";\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_formulare.png"
+
 
   },
   {
@@ -249,7 +301,9 @@
     "kurze_details": "Dateien lesen/schreiben",
     "ausfuehrliche_details": "file_get_contents, file_put_contents, fopen/fwrite. Einfache Datenhaltung ohne DB.",
     "code": "<?php\n$inhalt = file_get_contents('data.txt');\nfile_put_contents('data.txt', 'Neuer Text');\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_dateien.png"
+
 
   },
   {
@@ -258,7 +312,9 @@
     "kurze_details": "Sessions & Cookies",
     "ausfuehrliche_details": "session_start() vor jeder Ausgabe. $_SESSION für serverseitige Sitzung, setcookie für browserseitig.",
     "code": "<?php\nsession_start();\n$_SESSION['user'] = 'Max';\nsetcookie('farbe', 'blau', time() + 3600);\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_sessions.png"
+
 
   },
   {
@@ -267,7 +323,9 @@
     "kurze_details": "Einfache Login-Seite",
     "ausfuehrliche_details": "Formular POST → PHP prüft → Session setzen → Redirect. Fehlermeldung bei Fehlschlag.",
     "code": "<?php\nsession_start();\nif ($_SERVER['REQUEST_METHOD'] === 'POST') {\n  $user = $_POST['user'] ?? '';\n  $pass = $_POST['pass'] ?? '';\n  if ($user === 'admin' && $pass === 'geheim') {\n    $_SESSION['logged_in'] = true;\n    header('Location: dashboard.php');\n  } else {\n    $fehler = \"Falsche Zugangsdaten\";\n  }\n}\n?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_login.png"
+
 
   },
   {
@@ -276,7 +334,9 @@
     "kurze_details": "Inklusion & Template",
     "ausfuehrliche_details": "header.php, footer.php per include. Vermeidet Duplizität über alle Seiten.",
     "code": "<?php include 'header.php'; ?>\n<p>Seiteninhalt</p>\n<?php include 'footer.php'; ?>",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_include.png"
+
 
   },
   {
@@ -285,7 +345,9 @@
     "kurze_details": "Komplette Mini-Seite",
     "ausfuehrliche_details": "Startseite + Über + Kontakt, Navigation, Formular, Session. Im XAMPP htdocs, erreichbar unter http://localhost/meinprojekt/.",
     "code": "",
-    "kategorie": "php"
+    "kategorie": "php",
+    "bild_url": "assets/images/technisch/php_komplett.png"
+
 
   },
   {
@@ -294,7 +356,9 @@
     "kurze_details": "MariaDB einrichten",
     "ausfuehrliche_details": "XAMPP enthält MariaDB. phpMyAdmin unter http://localhost/phpmyadmin. Dort: DB anlegen, Tabellen erstellen, SQL eingeben.",
     "code": "",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_mariadb.png"
+
 
   },
   {
@@ -303,7 +367,9 @@
     "kurze_details": "Datenbank & Tabellen anlegen",
     "ausfuehrliche_details": "CREATE DATABASE, CREATE TABLE, Datentypen (INT, VARCHAR, TEXT, DATETIME, DECIMAL).",
     "code": "CREATE DATABASE IF NOT EXISTS webshop;\nUSE webshop;\nCREATE TABLE benutzer (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  username VARCHAR(50) NOT NULL UNIQUE,\n  email VARCHAR(100) NOT NULL,\n  passwort_hash VARCHAR(255) NOT NULL,\n  erstellt_am DATETIME DEFAULT CURRENT_TIMESTAMP\n);",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_datenbank.png"
+
 
   },
   {
@@ -312,7 +378,9 @@
     "kurze_details": "Keys & Beziehungen planen",
     "ausfuehrliche_details": "PK (AUTO_INCREMENT), FK. 1:n: FK in der n-Tabelle. n:m: Zwischentabelle. Planung: Entitäten → Beziehungen → Spalten.",
     "code": "CREATE TABLE bestellungen (\n  id INT AUTO_INCREMENT PRIMARY KEY,\n  benutzer_id INT NOT NULL,\n  produkt_id INT NOT NULL,\n  FOREIGN KEY (benutzer_id) REFERENCES benutzer(id),\n  FOREIGN KEY (produkt_id) REFERENCES produkte(id)\n);",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_keys.png"
+
 
   },
   {
@@ -321,7 +389,9 @@
     "kurze_details": "CRUD: INSERT, SELECT, UPDATE, DELETE",
     "ausfuehrliche_details": "Die vier Basis-Operationen. WHERE für Filter, ORDER BY, LIMIT.",
     "code": "INSERT INTO benutzer (username, email, passwort_hash) VALUES ('max', 'max@mail.de', 'hash123');\nSELECT * FROM benutzer WHERE id = 1;\nUPDATE benutzer SET email = 'neu@mail.de' WHERE id = 1;\nDELETE FROM benutzer WHERE id = 1;",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_crud.png"
+
 
   },
   {
@@ -330,7 +400,9 @@
     "kurze_details": "JOINs & Abfragen",
     "ausfuehrliche_details": "INNER JOIN (nur Match), LEFT JOIN (alle links). WHERE, GROUP BY für Filterung und Aggregation.",
     "code": "SELECT b.username, p.produkt, o.menge\nFROM bestellungen o\nJOIN benutzer b ON o.benutzer_id = b.id\nJOIN produkte p ON o.produkt_id = p.id\nWHERE o.datum >= '2026-01-01';",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_joins.png"
+
 
   },
   {
@@ -339,7 +411,9 @@
     "kurze_details": "PHP ↔ MySQL verbinden (PDO)",
     "ausfuehrliche_details": "PDO mit DSN-String. prepare + execute für Parameterisierte Abfragen. fetch(PDO::FETCH_ASSOC).",
     "code": "<?php\n$pdo = new PDO('mysql:host=localhost;dbname=webshop;charset=utf8mb4', 'root', '');\n$stmt = $pdo->prepare('SELECT * FROM benutzer WHERE username = :user');\n$stmt->execute([':user' => $_POST['user']]);\n$benutzer = $stmt->fetch(PDO::FETCH_ASSOC);\n?>",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_pdo.png"
+
 
   },
   {
@@ -348,7 +422,9 @@
     "kurze_details": "Prepared Statements & Sicherheit",
     "ausfuehrliche_details": "Nie Benutzereingaben direkt in SQL! Immer prepare + execute. Passwörter: password_hash / password_verify.",
     "code": "<?php\n$stmt = $pdo->prepare('SELECT * FROM benutzer WHERE username = ?');\n$stmt->execute([$_POST['user']]);\n$hash = password_hash('geheim', PASSWORD_DEFAULT);\nif (password_verify($eingabe, $gespeicherterHash)) { /* ok */ }\n?>",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_prepared.png"
+
 
   },
   {
@@ -357,7 +433,9 @@
     "kurze_details": "Indexe & Performance",
     "ausfuehrliche_details": "CREATE INDEX auf FK- und Filterspalten. EXPLAIN für Query-Plan. Normalisierung (1NF–3NF), Denormalisierung für Lese-Performance ok.",
     "code": "CREATE INDEX idx_email ON benutzer(email);\nEXPLAIN SELECT * FROM benutzer WHERE email = 'x@y.de';",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_indexe.png"
+
 
   },
   {
@@ -366,7 +444,9 @@
     "kurze_details": "Komplettes Backend-Beispiel",
     "ausfuehrliche_details": "Registrieren (INSERT + password_hash) → Login (SELECT + password_verify + Session) → Dashboard.",
     "code": "<?php\n// registrieren.php\n$hash = password_hash($_POST['pass'], PASSWORD_DEFAULT);\n$stmt = $pdo->prepare('INSERT INTO benutzer (username, email, passwort_hash) VALUES (:u, :e, :p)');\n$stmt->execute([':u' => $_POST['user'], ':e' => $_POST['email'], ':p' => $hash]);\n\n// login.php\n$stmt = $pdo->prepare('SELECT * FROM benutzer WHERE username = :u');\n$stmt->execute([':u' => $_POST['user']]);\n$b = $stmt->fetch(PDO::FETCH_ASSOC);\nif ($b && password_verify($_POST['pass'], $b['passwort_hash'])) {\n  $_SESSION['id'] = $b['id'];\n}\n?>",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_komplett.png"
+
 
   },
   {
@@ -375,7 +455,9 @@
     "kurze_details": "DB-Planung Best Practice",
     "ausfuehrliche_details": "Normalisierung, Migrations (versionierte SQL-Dateien), Backups (mysqldump), Indexe auf FK-Spalten.",
     "code": "mysqldump webshop > backup.sql\n-- Migrations: 001_create_user.sql, 002_add_orders.sql",
-    "kategorie": "sql"
+    "kategorie": "sql",
+    "bild_url": "assets/images/technisch/sql_planung.png"
+
 
   }
 ]   
