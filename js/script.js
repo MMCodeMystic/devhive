@@ -52,21 +52,9 @@ async function loadTechnischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt: Zeige alle Infos (Bild + Code + ausführliche Details)
+        // Klick-Effekt: Zeige alle Infos + Bild floatet links
         timelineItem.addEventListener('click', () => {
-            const content = timelineItem.querySelector('.timeline-content');
-            const bild = timelineItem.querySelector('.timeline-bild');
-            const ausfuehrlich = timelineItem.querySelector('.timeline-ausfuehrlich');
-
-            if (content.style.maxHeight === '1000px') {
-                content.style.maxHeight = '100px';
-                if (bild) bild.style.display = 'none';
-                if (ausfuehrlich) ausfuehrlich.style.display = 'none';
-            } else {
-                content.style.maxHeight = '1000px';
-                if (bild) bild.style.display = 'block';
-                if (ausfuehrlich) ausfuehrlich.style.display = 'block';
-            }
+            timelineItem.classList.toggle('expanded');
         });
     });
 
@@ -123,21 +111,9 @@ async function loadHistorischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt: Zeige alle Infos
+        // Klick-Effekt: Zeige alle Infos + Bild floatet links
         timelineItem.addEventListener('click', () => {
-            const content = timelineItem.querySelector('.timeline-content');
-            const bild = timelineItem.querySelector('.timeline-bild');
-            const ausfuehrlich = timelineItem.querySelector('.timeline-ausfuehrlich');
-
-            if (content.style.maxHeight === '1000px') {
-                content.style.maxHeight = '100px';
-                if (bild) bild.style.display = 'none';
-                if (ausfuehrlich) ausfuehrlich.style.display = 'none';
-            } else {
-                content.style.maxHeight = '1000px';
-                if (bild) bild.style.display = 'block';
-                if (ausfuehrlich) ausfuehrlich.style.display = 'block';
-            }
+            timelineItem.classList.toggle('expanded');
         });
     });
 
@@ -265,18 +241,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hexagon-Animation nach dem Laden entfernen und in Footer verschieben
+    // Hexagon-Animation nach dem Laden entfernen und Footer-Hexagon anzeigen
     const hexagonAnimation = document.querySelector('.hexagon-animation');
-    if (hexagonAnimation) {
+    const footerHexagonContainer = document.querySelector('.footer-hexagon-container');
+
+    if (hexagonAnimation && footerHexagonContainer) {
         setTimeout(() => {
             hexagonAnimation.style.display = 'none';
-        }, 1500);
-    }
-
-    // Footer-Hexagon nach Animation sichtbar machen
-    const footerHexagonContainer = document.querySelector('.footer-hexagon-container');
-    if (footerHexagonContainer) {
-        setTimeout(() => {
             footerHexagonContainer.style.display = 'flex';
         }, 1500);
     }
@@ -299,4 +270,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Platonische Körper im Hintergrund generieren
+    const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
+    if (hintergrund) {
+        const koerper = ['tetraeder', 'wuerfel', 'oktaeder', 'dodekaeder', 'ikosaeder'];
+        koerper.forEach((typ, index) => {
+            const koerperElement = document.createElement('div');
+            koerperElement.className = `koerper ${typ}`;
+            hintergrund.appendChild(koerperElement);
+        });
+    }
 });

@@ -6,6 +6,10 @@
     </div>
     <p>&copy; <?php echo date('Y'); ?> DevHive | M. Meier</p>
 </footer>
+
+<!-- Animierte Platonische Körper im Hintergrund -->
+<div class="platonische-koerper-hintergrund"></div>
+
 <!-- CTA-Popup -->
 <div class="cta-popup" id="cta-popup">
     <div class="cta-content">
@@ -17,4 +21,7 @@
         <button class="cta-close" id="cta-close">&times;</button>
     </div>
 </div>
+
 <script src="js/script.js"></script>
+</body>
+</html>
