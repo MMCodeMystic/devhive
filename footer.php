@@ -10,13 +10,13 @@
 <!-- Animierte Platonische Körper im Hintergrund -->
 <div class="platonische-koerper-hintergrund"></div>
 
-<!-- CTA-Popup -->
+<!-- CTA-Popup (angepasst: Verlinkt zu Timelines) -->
 <div class="cta-popup" id="cta-popup">
     <div class="cta-content">
-        <p>Entdecke mehr! Besuche die <strong>Projektseite</strong> oder probiere die <strong>Einstellungen</strong> aus.</p>
+        <p>Entdecke meine Lernreisen!</p>
         <div class="cta-buttons">
-            <a href="projekte.php" class="cta-btn">Projekte</a>
-            <a href="einstellungen.php" class="cta-btn">Einstellungen</a>
+            <a href="timelines_technisch.php" class="cta-btn">Technische Lernreise</a>
+            <a href="timelines_historisch.php" class="cta-btn">Historische IT</a>
         </div>
         <button class="cta-close" id="cta-close">&times;</button>
     </div>

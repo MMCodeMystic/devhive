@@ -1,6 +1,5 @@
 /* ===== Mobile-First Base Styles ===== */
 :root {
-    /* Dark Mode (Standard) */
     --bg: #2B2B2B;
     --text: #A8B8C8;
     --accent-red: #6D2E46;
@@ -8,7 +7,6 @@
     --accent-green: #2D6A4F;
     --card-bg: #3A3A3A;
     --nav-bg: #1E1E1E;
-    --feedback-glow: rgba(139, 90, 43, 0.3);
 }
 
 .bright-mode {
@@ -18,6 +16,7 @@
     --accent-blue: #1A4A7C;
     --card-bg: #E8E0D6;
     --nav-bg: #D4C8BC;
+    --invert-images: invert(1); /* Bilder im Bright Mode invertieren */
 }
 
 * {
@@ -32,7 +31,6 @@ html, body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    transition: background 0.3s, color 0.3s;
     display: flex;
     flex-direction: column;
 }
@@ -41,7 +39,7 @@ main {
     flex: 1;
 }
 
-/* ===== Lokale Fonts (TTF) ===== */
+/* ===== Fonts ===== */
 @font-face {
     font-family: 'Inter';
     src: url('fonts/Inter/Inter-Regular.ttf') format('truetype');
@@ -71,7 +69,7 @@ code, pre {
     font-family: 'Roboto Mono', monospace;
 }
 
-/* ===== Header & Navbar (Mobile-First) ===== */
+/* ===== Header & Navbar ===== */
 .header {
     display: flex;
     justify-content: space-between;
@@ -97,7 +95,6 @@ code, pre {
     color: var(--accent-red);
 }
 
-/* Burger-Menü (Standardmäßig sichtbar auf Mobil) */
 .burger-menu {
     background: none;
     border: none;
@@ -119,7 +116,7 @@ code, pre {
 }
 
 .navbar {
-    display: none; /* Standardmäßig versteckt auf Mobil */
+    display: none;
     position: fixed;
     top: 60px;
     left: 0;
@@ -175,14 +172,14 @@ code, pre {
     width: 100%;
 }
 
-/* ===== Desktop-Anpassungen ===== */
+/* ===== Desktop Styles ===== */
 @media (min-width: 769px) {
     .header {
         padding: 1rem 2rem;
     }
 
     .burger-menu {
-        display: none; /* Versteckt auf Desktop */
+        display: none;
     }
 
     .navbar {
@@ -207,7 +204,7 @@ code, pre {
     }
 }
 
-/* ===== Hexagon-Animation (Anfangsanimation) ===== */
+/* ===== Hexagon Animation ===== */
 .hexagon-animation {
     position: fixed;
     top: 0;
@@ -247,11 +244,10 @@ code, pre {
     padding: 2rem;
     background: var(--nav-bg);
     margin-top: auto;
-    z-index: 100;
 }
 
 .footer-hexagon-container {
-    display: none; /* Standardmäßig versteckt */
+    display: none;
     justify-content: center;
     margin: 1rem 0;
     cursor: pointer;
@@ -261,7 +257,7 @@ code, pre {
     width: 50px;
     height: 50px;
     stroke: var(--accent-blue);
-    transition: transform 0.3s ease, stroke 0.3s ease;
+    transition: transform 0.5s ease, stroke 0.3s ease;
     animation: footerHexagonPulse 2s ease-in-out infinite;
 }
 
@@ -301,7 +297,7 @@ code, pre {
     font-size: 1.8rem;
 }
 
-/* Cards */
+/* ===== Cards ===== */
 .cards {
     display: grid;
     grid-template-columns: 1fr;
@@ -313,14 +309,13 @@ code, pre {
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid var(--accent-blue);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background: rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {
@@ -328,7 +323,6 @@ code, pre {
     margin-bottom: 0.5rem;
 }
 
-/* ===== Desktop-Anpassungen für Cards ===== */
 @media (min-width: 769px) {
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -403,28 +397,30 @@ code, pre {
     max-height: 100px;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    position: relative;
 }
 
 .timeline-content:hover {
+    max-height: 500px;
+}
+
+.timeline-item.expanded .timeline-content {
     max-height: 1000px;
 }
 
 .timeline-bild {
-    max-width: 100%;
+    max-width: 100px;
     border-radius: 4px;
     margin-top: 0.5rem;
     filter: sepia(0.2) contrast(1.1);
     opacity: 0.9;
-    display: none;
-}
-
-.timeline-content:hover .timeline-bild,
-.timeline-item.expanded .timeline-bild {
-    display: block;
     float: left;
     margin-right: 1rem;
     margin-bottom: 1rem;
+    display: none;
+}
+
+.timeline-item.expanded .timeline-bild {
+    display: block;
 }
 
 .timeline-ausfuehrlich {
@@ -436,7 +432,12 @@ code, pre {
     display: block;
 }
 
-/* Code-Hervorhebung (IDE-ähnlich) */
+/* Bright Mode: Bilder invertieren */
+.bright-mode .timeline-bild {
+    filter: sepia(0.2) contrast(1.1) invert(1);
+}
+
+/* Code-Hervorhebung */
 pre {
     background: #1e1e1e;
     padding: 1rem;
@@ -448,7 +449,7 @@ pre {
     line-height: 1.4;
     color: #d4d4d4;
     border-left: 3px solid var(--accent-blue);
-    clear: both; /* Verhindert Überlappung mit float-Elementen */
+    clear: both;
 }
 
 pre code {
@@ -457,13 +458,12 @@ pre code {
     word-break: break-word;
 }
 
-/* Syntax-Highlighting für Code */
-code .tag { color: #ff6b6b; }      /* HTML-Tags */
-code .attr { color: #4ecdc4; }     /* Attribute */
-code .str { color: #95e1d3; }      /* Strings */
-code .php { color: #b180e2; }      /* PHP-Code */
-code .js { color: #f5e663; }       /* JavaScript */
-code .comment { color: #888; font-style: italic; } /* Kommentare */
+code .tag { color: #ff6b6b; }
+code .attr { color: #4ecdc4; }
+code .str { color: #95e1d3; }
+code .php { color: #b180e2; }
+code .js { color: #f5e663; }
+code .comment { color: #888; font-style: italic; }
 
 /* Filter-Buttons */
 .timeline-filters {
@@ -493,7 +493,7 @@ code .comment { color: #888; font-style: italic; } /* Kommentare */
     border-color: var(--accent-blue);
 }
 
-/* ===== Animierter Hintergrund (Schraffuren + Platonische Körper) ===== */
+/* ===== Animierter Hintergrund ===== */
 body::before {
     content: '';
     position: fixed;
@@ -528,10 +528,9 @@ body::before {
 
 .platonische-koerper-hintergrund .koerper {
     position: absolute;
-    transform-style: preserve-3d;
-    animation: float 25s linear infinite;
     border: 1px solid rgba(26, 58, 92, 0.5);
     opacity: 0.5;
+    animation: float 25s linear infinite;
 }
 
 .platonische-koerper-hintergrund .koerper:nth-child(1) {
@@ -539,6 +538,7 @@ body::before {
     left: 15%;
     width: 30px;
     height: 30px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     animation-delay: 0s;
 }
 
@@ -547,6 +547,7 @@ body::before {
     left: 25%;
     width: 40px;
     height: 40px;
+    background: rgba(0, 0, 0, 0.1);
     animation-delay: 5s;
 }
 
@@ -555,6 +556,7 @@ body::before {
     left: 85%;
     width: 35px;
     height: 35px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     animation-delay: 10s;
 }
 
@@ -563,6 +565,7 @@ body::before {
     left: 75%;
     width: 45px;
     height: 45px;
+    border-radius: 50%;
     animation-delay: 15s;
 }
 
@@ -571,6 +574,7 @@ body::before {
     left: 60%;
     width: 25px;
     height: 25px;
+    clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 80% 60%, 50% 80%, 20% 60%, 0% 35%, 20% 10%);
     animation-delay: 2s;
 }
 
@@ -580,73 +584,7 @@ body::before {
     100% { transform: translateY(0) rotateX(360deg) rotateY(360deg); }
 }
 
-/* ===== Projektseite ===== */
-.btn {
-    display: inline-block;
-    background: var(--accent-blue);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    margin-top: 1rem;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: var(--accent-red);
-}
-
-/* ===== Einstellungen-Seite ===== */
-.settings-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.setting-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-blue);
-}
-
-.setting-card h3 {
-    color: var(--accent-red);
-    margin-bottom: 1rem;
-}
-
-.theme-toggle, .animation-toggle {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.theme-btn {
-    background: var(--card-bg);
-    color: var(--text);
-    border: 1px solid var(--accent-blue);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-}
-
-.theme-btn.active {
-    background: var(--accent-blue);
-    color: white;
-    border-color: var(--accent-blue);
-}
-
-.animation-toggle label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
-
-/* ===== CTA-Popup ===== */
+/* ===== CTA-Popup (angepasst) ===== */
 .cta-popup {
     position: fixed;
     bottom: 20px;
@@ -659,15 +597,10 @@ body::before {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     display: none;
-    animation: ctaFadeIn 0.5s ease-out;
 }
 
 .cta-popup.show {
     display: block;
-}
-
-.cta-content {
-    position: relative;
 }
 
 .cta-content p {
@@ -715,12 +648,4 @@ body::before {
 @keyframes ctaFadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== Desktop-Anpassungen für CTA-Popup ===== */
-@media (min-width: 769px) {
-    .cta-popup {
-        bottom: 30px;
-        right: 30px;
-    }
 }

@@ -135,15 +135,14 @@ async function loadHistorischeTimeline() {
     });
 }
 
-// Haupt-Event-Listener für DOMContentLoaded
+// Haupt-Event-Listener
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme-Toggle (Dark/Bright Mode) - Persistenz für alle Seiten
+    // Theme-Toggle
     const darkModeBtn = document.getElementById('dark-mode-btn');
     const brightModeBtn = document.getElementById('bright-mode-btn');
     const body = document.body;
     const animationToggle = document.getElementById('animation-toggle');
 
-    // Lade gespeichertes Theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'bright') {
         body.classList.add('bright-mode');
@@ -151,15 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
             brightModeBtn.classList.add('active');
             darkModeBtn.classList.remove('active');
         }
-    } else {
-        body.classList.remove('bright-mode');
-        if (darkModeBtn && brightModeBtn) {
-            darkModeBtn.classList.add('active');
-            brightModeBtn.classList.remove('active');
-        }
     }
 
-    // Theme-Toggle-Logik
     if (darkModeBtn && brightModeBtn) {
         darkModeBtn.addEventListener('click', () => {
             body.classList.remove('bright-mode');
@@ -176,34 +168,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Animationen aktivieren/deaktivieren
-    if (animationToggle) {
-        animationToggle.addEventListener('change', () => {
-            const isChecked = animationToggle.checked;
-            document.body.style.setProperty('--animation-enabled', isChecked ? '1' : '0');
-            localStorage.setItem('animations', isChecked);
-        });
-
-        // Lade gespeicherte Animation-Einstellung
-        const savedAnimations = localStorage.getItem('animations');
-        if (savedAnimations === 'false') {
-            animationToggle.checked = false;
-            document.body.style.setProperty('--animation-enabled', '0');
-        }
-    }
-
-    // CTA-Popup nach 5 Sekunden anzeigen
+    // CTA-Popup (angepasst: Verlinkt zu Timelines)
     const ctaPopup = document.getElementById('cta-popup');
     const ctaClose = document.getElementById('cta-close');
-
     if (ctaPopup && ctaClose) {
         setTimeout(() => {
             ctaPopup.classList.add('show');
-        }, 5000); // 5 Sekunden
+        }, 5000);
 
         ctaClose.addEventListener('click', () => {
             ctaPopup.classList.remove('show');
         });
+
+        // CTA-Buttons anpassen
+        const ctaButtons = ctaPopup.querySelectorAll('.cta-btn');
+        if (ctaButtons.length >= 2) {
+            ctaButtons[0].href = "timelines_technisch.php";
+            ctaButtons[0].textContent = "Technische Lernreise";
+            ctaButtons[1].href = "timelines_historisch.php";
+            ctaButtons[1].textContent = "Historische IT";
+        }
     }
 
     // Footer-Easter Egg
@@ -213,13 +197,13 @@ document.addEventListener('DOMContentLoaded', () => {
         footerHexagon.addEventListener('click', () => {
             clickCount++;
             if (clickCount >= 5) {
-                alert('🐝 DevHive Easter Egg: 5x auf das Hexagon im Footer geklickt! 🎉');
+                alert('🐝 DevHive Easter Egg: 5x auf das Hexagon geklickt! 🎉');
                 clickCount = 0;
             }
         });
     }
 
-    // Burger-Menü-Logik (nur für Mobil)
+    // Burger-Menü
     const burgerMenu = document.querySelector('.burger-menu');
     const navbar = document.querySelector('.navbar');
     if (burgerMenu && navbar) {
@@ -229,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.toggle('active');
         });
 
-        // Schließe das Menü, wenn auf einen Link geklickt wird
         const navLinks = document.querySelectorAll('.nav-links a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -241,10 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hexagon-Animation nach dem Laden entfernen und Footer-Hexagon anzeigen
+    // Hexagon-Animation → Footer
     const hexagonAnimation = document.querySelector('.hexagon-animation');
     const footerHexagonContainer = document.querySelector('.footer-hexagon-container');
-
     if (hexagonAnimation && footerHexagonContainer) {
         setTimeout(() => {
             hexagonAnimation.style.display = 'none';
@@ -260,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadHistorischeTimeline();
     }
 
-    // Klick auf Cards (Startseite)
+    // Klick auf Cards
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('click', () => {
@@ -271,9 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Platonische Körper im Hintergrund generieren
+    // Platonische Körper im Hintergrund
     const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
-    if (hintergrund) {
+    if (hintergrund && hintergrund.children.length === 0) {
         const koerper = ['tetraeder', 'wuerfel', 'oktaeder', 'dodekaeder', 'ikosaeder'];
         koerper.forEach((typ, index) => {
             const koerperElement = document.createElement('div');
