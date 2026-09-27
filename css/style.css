@@ -26,7 +26,6 @@
 
 /* ===== Standard-Stile ===== */
 :root {
-    /* Dark Mode (Standard) */
     --bg: #2B2B2B;
     --text: #A8B8C8;
     --accent-red: #6D2E46;
@@ -58,6 +57,8 @@ body {
     color: var(--text);
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
+    position: relative;
+    overflow-x: hidden;
 }
 
 code, pre {
@@ -75,15 +76,12 @@ code, pre {
     top: 0;
     z-index: 100;
     flex-wrap: wrap;
-    position: relative;
-    overflow: hidden;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 1rem;
-    z-index: 1;
 }
 
 .logo {
@@ -92,7 +90,6 @@ code, pre {
     color: var(--accent-red);
 }
 
-/* Burger-Menü (Mobil & Desktop) */
 .burger-menu {
     background: none;
     border: none;
@@ -100,8 +97,7 @@ code, pre {
     color: var(--text);
     padding: 0.5rem;
     z-index: 101;
-    position: relative;
-    display: none; /* Standardmäßig versteckt (nur auf Mobil sichtbar) */
+    display: none;
 }
 
 .burger-menu[aria-expanded="true"] .hexagon {
@@ -112,20 +108,16 @@ code, pre {
     transition: transform 0.3s ease;
 }
 
-/* Navbar (Desktop/Tablet) */
 .navbar {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
-    z-index: 1;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links a {
@@ -161,8 +153,8 @@ code, pre {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     z-index: 1000;
     pointer-events: none;
     opacity: 1;
@@ -170,8 +162,8 @@ code, pre {
 }
 
 .hexagon-animation .hexagon {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     stroke: var(--accent-blue);
     animation: hexagonPulse 1.5s ease-out forwards;
 }
@@ -225,33 +217,6 @@ code, pre {
     .header {
         padding: 1rem;
     }
-
-    .hexagon-animation {
-        width: 80px;
-        height: 80px;
-    }
-
-    .hexagon-animation .hexagon {
-        width: 80px;
-        height: 80px;
-    }
-}
-
-/* ===== Desktop-Anpassungen ===== */
-@media (min-width: 769px) {
-    .burger-menu {
-        display: block; /* Immer sichtbar, aber ohne Funktion auf Desktop */
-        pointer-events: none; /* Deaktiviert Klicks auf Desktop */
-    }
-
-    .navbar {
-        display: flex !important;
-        transform: none !important;
-        padding: 0;
-        height: auto;
-        position: static;
-        background: none;
-    }
 }
 
 /* ===== Main Content ===== */
@@ -291,12 +256,14 @@ code, pre {
     padding: 1.5rem;
     border-radius: 8px;
     border-left: 4px solid var(--accent-blue);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .card h3 {
@@ -310,6 +277,7 @@ code, pre {
     padding: 2rem;
     background: var(--nav-bg);
     margin-top: 2rem;
+    position: relative;
 }
 
 .lang-switcher {
@@ -329,6 +297,32 @@ code, pre {
     background: var(--accent-blue);
     color: white;
     border-color: var(--accent-blue);
+}
+
+/* Footer-Hexagon */
+.footer-hexagon-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.footer-hexagon {
+    width: 50px;
+    height: 50px;
+    stroke: var(--accent-blue);
+    transition: transform 0.3s ease, stroke 0.3s ease;
+    animation: footerHexagonPulse 3s ease-in-out infinite;
+}
+
+.footer-hexagon:hover {
+    stroke: var(--accent-red);
+    transform: scale(1.1);
+}
+
+@keyframes footerHexagonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 /* ===== Code-Hervorhebung ===== */
@@ -354,104 +348,201 @@ code .php { color: #b180e2; }
 code .js { color: #f5e663; }
 code .comment { color: #888; font-style: italic; }
 
-/* ===== Historische Timeline ===== */
-.timeline-item.historisch img {
-    filter: sepia(0.8) contrast(1.2);
-    opacity: 0.9;
+/* ===== Timelines ===== */
+.timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+    margin-top: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent-blue);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid transparent;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    box-shadow: 0 0 0 2px var(--bg);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-nr {
+    background: var(--accent-green);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .timeline-content {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
     max-height: 100px;
     overflow: hidden;
     transition: max-height 0.3s ease;
 }
 
-/* ===== Platonische Körper ===== */
-.wireframe-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: -1;
+.timeline-content:hover {
+    max-height: 500px;
 }
 
-.platonische-koerper {
-    position: relative;
+.timeline-ausfuehrlich {
+    display: none;
+    margin-top: 0.5rem;
+}
+
+.timeline-bild {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 1rem;
+    filter: sepia(0.8) contrast(1.2);
+    opacity: 0.9;
+}
+
+/* Filter-Buttons */
+.timeline-filters {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--accent-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.filter-btn:hover {
+    background: rgba(26, 58, 92, 0.3);
+}
+
+.filter-btn.active {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+/* ===== Animierter Hintergrund ===== */
+.platonische-koerper-hintergrund {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.05;
+}
+
+.platonische-koerper-hintergrund .koerper {
+    position: absolute;
     transform-style: preserve-3d;
-    animation: rotateBody 40s linear infinite;
+    animation: float 20s linear infinite;
 }
 
-.platonische-koerper > div {
-    position: absolute;
+.platonische-koerper-hintergrund .koerper:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.platonische-koerper-hintergrund .koerper:nth-child(2) {
+    top: 60%;
+    left: 20%;
+    animation-delay: 5s;
+}
+
+.platonische-koerper-hintergrund .koerper:nth-child(3) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 10s;
+}
+
+.platonische-koerper-hintergrund .koerper:nth-child(4) {
+    top: 80%;
+    left: 70%;
+    animation-delay: 15s;
+}
+
+.platonische-koerper-hintergrund .koerper:nth-child(5) {
+    top: 20%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+    50% { transform: translateY(-20px) rotateX(180deg) rotateY(180deg); }
+    100% { transform: translateY(0) rotateX(360deg) rotateY(360deg); }
+}
+
+/* Wireframe-Stile für Hintergrund-Körper */
+.koerper {
+    width: 50px;
+    height: 50px;
     border: 1px solid var(--accent-blue);
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
-/* Tetraeder */
-.platonische-koerper.tetraeder > div {
-    width: 0; height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 25px solid var(--accent-blue);
-    top: 25px; left: 25px;
-}
-.platonische-koerper.tetraeder > div:nth-child(2) {
-    border-bottom-color: transparent;
-    border-top-color: var(--accent-blue);
-    top: 0;
+.koerper.tetraeder { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.koerper.wuerfel { background: rgba(0, 0, 0, 0.1); }
+.koerper.oktaeder { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+.koerper.dodekaeder { border-radius: 50%; }
+.koerper.ikosaeder { clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 80% 60%, 50% 80%, 20% 60%, 0% 35%, 20% 10%); }
+
+/* ===== Projektseite ===== */
+.btn {
+    display: inline-block;
+    background: var(--accent-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
 }
 
-/* Würfel */
-.platonische-koerper.wuerfel > div {
-    width: 50px; height: 50px;
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--accent-blue);
-}
-.platonische-koerper.wuerfel > div:nth-child(1) { transform: rotateY(0deg) translateZ(25px); }
-.platonische-koerper.wuerfel > div:nth-child(2) { transform: rotateY(90deg) translateZ(25px); }
-.platonische-koerper.wuerfel > div:nth-child(3) { transform: rotateY(180deg) translateZ(25px); }
-.platonische-koerper.wuerfel > div:nth-child(4) { transform: rotateY(270deg) translateZ(25px); }
-.platonische-koerper.wuerfel > div:nth-child(5) { transform: rotateX(90deg) translateZ(25px); }
-.platonische-koerper.wuerfel > div:nth-child(6) { transform: rotateX(-90deg) translateZ(25px); }
-
-/* Oktaeder */
-.platonische-koerper.oktaeder > div {
-    width: 0; height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid var(--accent-blue);
-    top: 20px; left: 20px;
-}
-.platonische-koerper.oktaeder > div:nth-child(2) {
-    border-bottom-color: transparent;
-    border-top-color: var(--accent-blue);
-    top: 0;
-}
-
-/* Dodekaeder (vereinfacht) */
-.platonische-koerper.dodekaeder > div {
-    width: 30px; height: 30px;
-    border: 1px solid var(--accent-blue);
-    background: rgba(0, 0, 0, 0.05);
-    transform: translateZ(15px);
-}
-
-/* Ikosaeder (vereinfacht) */
-.platonische-koerper.ikosaeder > div {
-    width: 0; height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 15px solid var(--accent-blue);
-    position: absolute;
-    top: 15px; left: 15px;
-}
-
-@keyframes rotateBody {
-    0% { transform: rotateX(0deg) rotateY(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
+.btn:hover {
+    background: var(--accent-red);
 }

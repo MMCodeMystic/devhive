@@ -1,47 +1,45 @@
-\## Changelog
+## Changelog
 
+### [1.0] - 27.09.2026
+- Grundgerüst `index.php` mit Header, Navbar, Cards für Timelines/Projekte.
+- Responsive Design (Burger-Menü für Mobil).
+- CSS-Variablen für Dark Mode.
 
+### [1.1] - 27.09.2026
+- Hinzugefügt: `header.php`, `footer.php` mit Animationen (Platonische Körper, Muster).
+- Neue Seiten: `timelines_technisch.php`, `timelines_historisch.php`.
+- JSON-Daten in `data/lernreise.json` und `data/historisch.json`.
 
-\### \[1.0] - 27.09.2026
+### [1.2] - 27.09.2026
+- Burger-Menü mit Hexagon-Animation für Mobilansicht hinzugefügt.
+- Responsive Navbar für Desktop/Tablet implementiert.
+- Navigationselemente (Home, Timelines, Projekte, Einstellungen) verlinkt.
 
-\- Grundgerüst `index.php` mit Header, Navbar, Cards.
+### [1.3] - 28.09.2026
+- **Navbar**:
+  - Sticky Navbar immer sichtbar (Desktop/Mobil).
+- **Technische Lernreise**:
+  - Filterfunktion für Kategorien hinzugefügt.
+  - JSON-Daten um `kategorie`-Feld erweitert.
+- **Easter Egg**:
+  - Hexagon im Footer mit Animation (5x Klick → Easter Egg).
+- **Hintergrund**:
+  - Animierte Platonische Körper als Wireframes im Hintergrund.
+- **Projektseite**:
+  - Neue Seite `projekte.php` mit Einbettung von Tools.
+- **Bilder**:
+  - `bild_url`-Felder in JSON hinzugefügt.
+  - Namensvorschläge für Bilder umgesetzt.
 
-\- Responsive Design (Burger-Menü für Mobil).
-
-\- CSS-Variablen für Dark Mode.
-
-
-
-\### \[1.1] - 28.09.2026
-
-\- Hinzugefügt: `header.php`, `footer.php` mit Animationen (Platonische Körper, Muster).
-
-\- Neue Seiten: `timelines\_technisch.php`, `timelines\_historisch.php`.
-
-\- JSON-Daten in `data/lernreise.json` und `data/historisch.json`.
-
-\- JavaScript zum Laden der Timelines (`timelines.js`).
-
-
-
-\### \[1.2] - 27.09.2026
-
-\- \*\*Header \& Navigation\*\*:
-
-&#x20; - Burger-Menü mit Hexagon-Animation für Mobilansicht hinzugefügt.
-
-&#x20; - Responsive Navbar für Desktop/Tablet implementiert.
-
-&#x20; - Navigationselemente (Home, Timelines, Projekte, Einstellungen) verlinkt.
-
-\- \*\*Design\*\*:
-
-&#x20; - Hexagon-Symbol im Burger-Menü mit Rotationseffekt beim Öffnen/Schließen.
-
-&#x20; - Navbar-Stile für Mobil und Desktop angepasst.
-
-
-
+### [1.4] - 28.09.2026
+- **Navigation**:
+  - Projekte und Einstellungen in Navbar/Burger-Menü verlinkt.
+- **Einstellungen-Seite**:
+  - Neue Seite `einstellungen.php` hinzugefügt.
+- **Hintergrund**:
+  - Animierte Platonische Körper und Muster im Hintergrund.
+- **JSON**:
+  - Bilder in `lernreise.json` und `historisch.json` eingebunden.
 
 
 

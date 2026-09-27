@@ -21,7 +21,7 @@
             <div class="logo">DevHive</div>
         </div>
 
-        <!-- Burger-Menü (Mobil & Desktop) -->
+        <!-- Burger-Menü (nur Mobil) -->
         <button class="burger-menu" aria-label="Menü öffnen" aria-expanded="false">
             <svg class="hexagon" viewBox="0 0 100 100" width="30" height="30">
                 <polygon points="50,10 90,25 90,75 50,90 10,75 10,25" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -34,8 +34,17 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="timelines_technisch.php">Technische Lernreise</a></li>
                 <li><a href="timelines_historisch.php">Historische IT</a></li>
-                <li><a href="#projekte">Projekte</a></li>
+                <li><a href="projekte.php">Projekte</a></li>
                 <li><a href="#einstellungen">Einstellungen</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Animierte Platonische Körper im Hintergrund -->
+    <div class="platonische-koerper-hintergrund">
+        <div class="koerper tetraeder"></div>
+        <div class="koerper wuerfel"></div>
+        <div class="koerper oktaeder"></div>
+        <div class="koerper dodekaeder"></div>
+        <div class="koerper ikosaeder"></div>
+    </div>

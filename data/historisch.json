@@ -15,7 +15,8 @@
       "kurz": "Manuskript, später Druckerzeugnisse.",
       "lang": "Keine physische Hardware nötig; reine Abstraktion auf Papier."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/boolesche_algebra.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 2,
@@ -33,7 +34,8 @@
       "kurz": "Reine Rechenmethode.",
       "lang": "Keine Hardware erforderlich; mathematische Darstellung auf Papier."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/binaeres_zahlensystem.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 3,
@@ -51,7 +53,8 @@
       "kurz": "Mechanischer Webstuhl mit Papierkarten.",
       "lang": "Karten aus Papier, gestanzt mit Stanze. Mechanische Nadeln lesen die Löcher."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/jacquard_webstuhl.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 4,
@@ -69,7 +72,8 @@
       "kurz": "Mechanische Lesemaschinen mit elektrischen Kontakten.",
       "lang": "Papierkarten, Stanzmaschinen, mechanische Leseköpfe mit elektrischen Kontakten; später Elektromechanik."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/hollerith_lochkarten.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 5,
@@ -87,7 +91,8 @@
       "kurz": "Kupfer, Stahl, Dampf.",
       "lang": "Präzisionsmechanik, Dampfmaschine, Kupfer, Stahl. Nie in Vollgröße realisiert."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/babbage_analytical_engine.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 6,
@@ -105,7 +110,8 @@
       "kurz": "Handgefertigt in Berlin.",
       "lang": "Relais, Drähte, 35-mm-Filmstreifen mit Löchern; handgefertigt in Zuses Werkstatt in Berlin."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/zuse_z1_z3.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 7,
@@ -123,7 +129,8 @@
       "kurz": "Kupfer, Eisen, Spulen, Glas, Wolfram.",
       "lang": "Relais (Kupfer, Eisen, Spulen), Vakuumröhren (Glas, Wolfram-Filament)."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/erste_logikgatter.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 8,
@@ -141,7 +148,8 @@
       "kurz": "Handverdrahtet, Glas, Wolfram.",
       "lang": "Vakuumröhren (Glas, Wolfram), Kondensatoren, Widerstände, Kupferdraht; handverdrahtet in großen Schränken."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/eniac.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 9,
@@ -159,7 +167,8 @@
       "kurz": "Gleiche Technik wie ENIAC, aber mit Speicher.",
       "lang": "Kondensatorkapazitäten, später Magnetkern-Speicher (kleine Ferritringe mit Draht durchgesteckt)."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/von_neumann_architektur.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 10,
@@ -177,7 +186,8 @@
       "kurz": "Assembler selbst in Assembler oder Maschinencode geschrieben.",
       "lang": "Programmierung auf Lochkarten oder Papierband; Assembler in Assembler/Maschinencode implementiert."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/assembler.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 11,
@@ -195,7 +205,8 @@
       "kurz": "Programme auf Lochkarten oder Papierband.",
       "lang": "Compiler in Assembler/Maschinencode; Programme auf Lochkarten oder Papierband eingegeben."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/fortran_cobol.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 12,
@@ -213,7 +224,8 @@
       "kurz": "Unix auf PDP-11.",
       "lang": "Compiler in C geschrieben (self-hosting); Unix auf PDP-11 entwickelt und portiert."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/c_sprache.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 13,
@@ -231,7 +243,8 @@
       "kurz": "Make, CMake.",
       "lang": "Compiler (g++, clang++); Build-Systeme (Make, CMake). Entwicklung auf Workstations, später PC."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/c_plus_plus.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 14,
@@ -249,7 +262,8 @@
       "kurz": "Build-Systeme (Maven, pip, cargo, npm).",
       "lang": "Compiler/Interpreter in C/C++/Rust; Build-Systeme (Maven, pip, cargo, npm). Entwicklung auf modernen PCs/Servern."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/java_python.png",
+    "kategorie": "theorie"
   },
   {
     "nr": 15,
@@ -267,7 +281,8 @@
       "kurz": "UV/EUV, Doping, Ätzen; Reinräume (Class 100); Fab-Werte >20 Mrd. $.",
       "lang": "Silizium-Wafer, Photolithographie (UV/EUV), Doping, Ätzen; Reinräume (Class 100); Fab-Werte >20 Mrd. $. Tausende Fachkräfte pro Fab."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/transistor_ic_soc.png",
+    "kategorie": "hardware-planung"
   },
   {
     "nr": 16,
@@ -285,6 +300,7 @@
       "kurz": "GPU (Silizium, 4/5-nm), HBM (3D-DRAM), Netzwerkkarten; Strom, Kühlung, Netzwerk.",
       "lang": "GPU (Silizium, 4/5-nm), HBM (3D-DRAM), Netzwerkkarten (InfiniBand); Rechenzentren: Stromversorgung, Kühlung, Netzwerk-Infrastruktur."
     },
-    "bild_url":"assets/images/placeholder.jpg"
+    "bild_url":"assets/images/historisch/cloud_ki.png",
+    "kategorie": "hardware-planung"
   }
 ]   

@@ -24,10 +24,12 @@
                 <div class="card">
                     <h3>Technische Lernreise</h3>
                     <p>Meine 2-wöchige Reise durch HTML, CSS, JS, Git, PHP & SQL.</p>
+                    <a href="timelines_technisch.php" style="display: none;">Zur technischen Lernreise</a>
                 </div>
                 <div class="card">
                     <h3>Historische IT-Entwicklung</h3>
                     <p>Von Philosophen über Hardware zu modernen Frameworks.</p>
+                    <a href="timelines_historisch.php" style="display: none;">Zur historischen Timeline</a>
                 </div>
             </div>
         </section>
@@ -38,27 +40,22 @@
                 <div class="card">
                     <h3>Tierheim</h3>
                     <p>PHP-basierte Website (extern eingebunden).</p>
+                    <a href="tierheim/" style="display: none;">Zum Tierheim</a>
                 </div>
                 <div class="card">
                     <h3>Lernsoftware</h3>
                     <p>PHP-basierte Lernanwendung.</p>
+                    <a href="lernapp/" style="display: none;">Zur Lernsoftware</a>
                 </div>
                 <div class="card">
                     <h3>Sonstige Projekte</h3>
                     <p>Kleinere Experimente und Übungen.</p>
+                    <a href="projekte.php" style="display: none;">Zu den Projekten</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="lang-switcher">
-            <button class="lang-btn active" data-lang="de">DE</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-        </div>
-        <p>&copy; 2026 DevHive | M. Meier</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
