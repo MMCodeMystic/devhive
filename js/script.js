@@ -52,7 +52,7 @@ async function loadTechnischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt: Zeige alle Infos + Bild floatet links
+        // Klick-Effekt: Zeige alle Infos + Bild wird größer
         timelineItem.addEventListener('click', () => {
             timelineItem.classList.toggle('expanded');
         });
@@ -111,7 +111,7 @@ async function loadHistorischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt: Zeige alle Infos + Bild floatet links
+        // Klick-Effekt: Zeige alle Infos + Bild wird größer
         timelineItem.addEventListener('click', () => {
             timelineItem.classList.toggle('expanded');
         });
@@ -243,10 +243,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Platonische Körper im Hintergrund
+    // 3 Platonische Körper im Hintergrund
     const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
     if (hintergrund && hintergrund.children.length === 0) {
-        const koerper = ['tetraeder', 'wuerfel', 'oktaeder', 'dodekaeder', 'ikosaeder'];
+        const koerper = ['tetraeder', 'wuerfel', 'oktaeder'];
         koerper.forEach((typ) => {
             const koerperElement = document.createElement('div');
             koerperElement.className = `koerper ${typ}`;
