@@ -141,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkModeBtn = document.getElementById('dark-mode-btn');
     const brightModeBtn = document.getElementById('bright-mode-btn');
     const body = document.body;
-    const animationToggle = document.getElementById('animation-toggle');
 
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'bright') {
@@ -179,15 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ctaClose.addEventListener('click', () => {
             ctaPopup.classList.remove('show');
         });
-
-        // CTA-Buttons anpassen
-        const ctaButtons = ctaPopup.querySelectorAll('.cta-btn');
-        if (ctaButtons.length >= 2) {
-            ctaButtons[0].href = "timelines_technisch.php";
-            ctaButtons[0].textContent = "Technische Lernreise";
-            ctaButtons[1].href = "timelines_historisch.php";
-            ctaButtons[1].textContent = "Historische IT";
-        }
     }
 
     // Footer-Easter Egg
@@ -257,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
     if (hintergrund && hintergrund.children.length === 0) {
         const koerper = ['tetraeder', 'wuerfel', 'oktaeder', 'dodekaeder', 'ikosaeder'];
-        koerper.forEach((typ, index) => {
+        koerper.forEach((typ) => {
             const koerperElement = document.createElement('div');
             koerperElement.className = `koerper ${typ}`;
             hintergrund.appendChild(koerperElement);

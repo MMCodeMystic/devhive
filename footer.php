@@ -10,7 +10,7 @@
 <!-- Animierte Platonische Körper im Hintergrund -->
 <div class="platonische-koerper-hintergrund"></div>
 
-<!-- CTA-Popup (angepasst: Verlinkt zu Timelines) -->
+<!-- CTA-Popup -->
 <div class="cta-popup" id="cta-popup">
     <div class="cta-content">
         <p>Entdecke meine Lernreisen!</p>

@@ -1,4 +1,4 @@
-/* ===== Mobile-First Base Styles ===== */
+/* ===== Base Styles (Mobile-First) ===== */
 :root {
     --bg: #2B2B2B;
     --text: #A8B8C8;
@@ -16,7 +16,6 @@
     --accent-blue: #1A4A7C;
     --card-bg: #E8E0D6;
     --nav-bg: #D4C8BC;
-    --invert-images: invert(1); /* Bilder im Bright Mode invertieren */
 }
 
 * {
@@ -25,48 +24,18 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
     height: 100%;
     font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
+}
+
+body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
-
-/* ===== Fonts ===== */
-@font-face {
-    font-family: 'Inter';
-    src: url('fonts/Inter/Inter-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Inter';
-    src: url('fonts/Inter/Inter-Bold.ttf') format('truetype');
-    font-weight: 600;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Roboto Mono';
-    src: url('fonts/RobotoMono/RobotoMono-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Roboto Mono';
-    src: url('fonts/RobotoMono/RobotoMono-Bold.ttf') format('truetype');
-    font-weight: 600;
-    font-display: swap;
-}
-
-code, pre {
-    font-family: 'Roboto Mono', monospace;
 }
 
 /* ===== Header & Navbar ===== */
@@ -129,6 +98,7 @@ code, pre {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 99;
+    overflow-y: auto;
 }
 
 .navbar.active {
@@ -172,7 +142,7 @@ code, pre {
     width: 100%;
 }
 
-/* ===== Desktop Styles ===== */
+/* Desktop Styles */
 @media (min-width: 769px) {
     .header {
         padding: 1rem 2rem;
@@ -204,75 +174,12 @@ code, pre {
     }
 }
 
-/* ===== Hexagon Animation ===== */
-.hexagon-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: hexagonShrink 1.5s ease-out forwards;
-}
-
-.hexagon-animation .hexagon {
-    width: 300px;
-    height: 300px;
-    stroke: var(--accent-blue);
-    stroke-width: 2;
-    animation: hexagonPulse 1.5s ease-out forwards;
-}
-
-@keyframes hexagonShrink {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.1); display: none; }
-}
-
-@keyframes hexagonPulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.9; }
-    100% { transform: scale(0.1); opacity: 0; }
-}
-
-/* ===== Footer ===== */
-.footer {
-    text-align: center;
-    padding: 2rem;
-    background: var(--nav-bg);
-    margin-top: auto;
-}
-
-.footer-hexagon-container {
-    display: none;
-    justify-content: center;
-    margin: 1rem 0;
-    cursor: pointer;
-}
-
-.footer-hexagon {
-    width: 50px;
-    height: 50px;
-    stroke: var(--accent-blue);
-    transition: transform 0.5s ease, stroke 0.3s ease;
-    animation: footerHexagonPulse 2s ease-in-out infinite;
-}
-
-.footer-hexagon:hover {
-    stroke: var(--accent-red);
-    transform: scale(1.2);
-    animation: none;
-}
-
-@keyframes footerHexagonPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
 /* ===== Main Content ===== */
+main {
+    flex: 1;
+    padding-bottom: 100px; /* Platz für Footer */
+}
+
 .hero {
     text-align: center;
     padding: 4rem 2rem;
@@ -295,6 +202,16 @@ code, pre {
     color: var(--accent-green);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--nav-bg);
+    margin-top: auto;
+    z-index: 100;
+    position: relative;
 }
 
 /* ===== Cards ===== */
@@ -584,7 +501,68 @@ body::before {
     100% { transform: translateY(0) rotateX(360deg) rotateY(360deg); }
 }
 
-/* ===== CTA-Popup (angepasst) ===== */
+/* ===== Hexagon Animation ===== */
+.hexagon-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: hexagonShrink 1.5s ease-out forwards;
+}
+
+.hexagon-animation .hexagon {
+    width: 300px;
+    height: 300px;
+    stroke: var(--accent-blue);
+    stroke-width: 2;
+    animation: hexagonPulse 1.5s ease-out forwards;
+}
+
+@keyframes hexagonShrink {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.1); display: none; }
+}
+
+@keyframes hexagonPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.9; }
+    100% { transform: scale(0.1); opacity: 0; }
+}
+
+/* ===== Footer Hexagon ===== */
+.footer-hexagon-container {
+    display: none;
+    justify-content: center;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.footer-hexagon {
+    width: 50px;
+    height: 50px;
+    stroke: var(--accent-blue);
+    transition: transform 0.5s ease, stroke 0.3s ease;
+    animation: footerHexagonPulse 2s ease-in-out infinite;
+}
+
+.footer-hexagon:hover {
+    stroke: var(--accent-red);
+    transform: scale(1.2);
+    animation: none;
+}
+
+@keyframes footerHexagonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ===== CTA-Popup ===== */
 .cta-popup {
     position: fixed;
     bottom: 20px;
