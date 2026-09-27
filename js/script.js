@@ -34,7 +34,6 @@ async function loadTechnischeTimeline() {
             ? `<pre><code>${highlightCode(escapeHtml(item.code))}</code></pre>`
             : '';
 
-        // Bild einbinden (falls vorhanden)
         const bildHtml = item.bild_url
             ? `<img src="${item.bild_url}" alt="${item.oberbegriff}" class="timeline-bild">`
             : '';
@@ -53,24 +52,22 @@ async function loadTechnischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt: Zeige ausführliche Details
+        // Klick-Effekt: Zeige alle Infos (Bild + Code + ausführliche Details)
         timelineItem.addEventListener('click', () => {
-            const content = timelineItem.querySelector('.timeline-ausfuehrlich');
-            if (content) {
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            const content = timelineItem.querySelector('.timeline-content');
+            const bild = timelineItem.querySelector('.timeline-bild');
+            const ausfuehrlich = timelineItem.querySelector('.timeline-ausfuehrlich');
+
+            if (content.style.maxHeight === '1000px') {
+                content.style.maxHeight = '100px';
+                if (bild) bild.style.display = 'none';
+                if (ausfuehrlich) ausfuehrlich.style.display = 'none';
+            } else {
+                content.style.maxHeight = '1000px';
+                if (bild) bild.style.display = 'block';
+                if (ausfuehrlich) ausfuehrlich.style.display = 'block';
             }
         });
-
-        // Hover-Effekt
-        const content = timelineItem.querySelector('.timeline-content');
-        if (content) {
-            timelineItem.addEventListener('mouseenter', () => {
-                content.style.maxHeight = '500px';
-            });
-            timelineItem.addEventListener('mouseleave', () => {
-                content.style.maxHeight = '100px';
-            });
-        }
     });
 
     // Filter-Logik
@@ -126,24 +123,22 @@ async function loadHistorischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt: Zeige ausführliche Details
+        // Klick-Effekt: Zeige alle Infos
         timelineItem.addEventListener('click', () => {
-            const content = timelineItem.querySelector('.timeline-ausfuehrlich');
-            if (content) {
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            const content = timelineItem.querySelector('.timeline-content');
+            const bild = timelineItem.querySelector('.timeline-bild');
+            const ausfuehrlich = timelineItem.querySelector('.timeline-ausfuehrlich');
+
+            if (content.style.maxHeight === '1000px') {
+                content.style.maxHeight = '100px';
+                if (bild) bild.style.display = 'none';
+                if (ausfuehrlich) ausfuehrlich.style.display = 'none';
+            } else {
+                content.style.maxHeight = '1000px';
+                if (bild) bild.style.display = 'block';
+                if (ausfuehrlich) ausfuehrlich.style.display = 'block';
             }
         });
-
-        // Hover-Effekt
-        const content = timelineItem.querySelector('.timeline-content');
-        if (content) {
-            timelineItem.addEventListener('mouseenter', () => {
-                content.style.maxHeight = '500px';
-            });
-            timelineItem.addEventListener('mouseleave', () => {
-                content.style.maxHeight = '100px';
-            });
-        }
     });
 
     // Filter-Logik
@@ -164,34 +159,45 @@ async function loadHistorischeTimeline() {
     });
 }
 
-// Theme-Toggle (Dark/Bright Mode)
+// Haupt-Event-Listener für DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme-Toggle (Dark/Bright Mode) - Persistenz für alle Seiten
     const darkModeBtn = document.getElementById('dark-mode-btn');
     const brightModeBtn = document.getElementById('bright-mode-btn');
+    const body = document.body;
     const animationToggle = document.getElementById('animation-toggle');
 
+    // Lade gespeichertes Theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'bright') {
+        body.classList.add('bright-mode');
+        if (darkModeBtn && brightModeBtn) {
+            brightModeBtn.classList.add('active');
+            darkModeBtn.classList.remove('active');
+        }
+    } else {
+        body.classList.remove('bright-mode');
+        if (darkModeBtn && brightModeBtn) {
+            darkModeBtn.classList.add('active');
+            brightModeBtn.classList.remove('active');
+        }
+    }
+
+    // Theme-Toggle-Logik
     if (darkModeBtn && brightModeBtn) {
         darkModeBtn.addEventListener('click', () => {
-            document.body.classList.remove('bright-mode');
+            body.classList.remove('bright-mode');
             darkModeBtn.classList.add('active');
             brightModeBtn.classList.remove('active');
             localStorage.setItem('theme', 'dark');
         });
 
         brightModeBtn.addEventListener('click', () => {
-            document.body.classList.add('bright-mode');
+            body.classList.add('bright-mode');
             brightModeBtn.classList.add('active');
             darkModeBtn.classList.remove('active');
             localStorage.setItem('theme', 'bright');
         });
-
-        // Lade gespeichertes Theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'bright') {
-            document.body.classList.add('bright-mode');
-            brightModeBtn.classList.add('active');
-            darkModeBtn.classList.remove('active');
-        }
     }
 
     // Animationen aktivieren/deaktivieren
@@ -209,10 +215,22 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.setProperty('--animation-enabled', '0');
         }
     }
-});
 
-// Footer-Easter Egg
-document.addEventListener('DOMContentLoaded', () => {
+    // CTA-Popup nach 5 Sekunden anzeigen
+    const ctaPopup = document.getElementById('cta-popup');
+    const ctaClose = document.getElementById('cta-close');
+
+    if (ctaPopup && ctaClose) {
+        setTimeout(() => {
+            ctaPopup.classList.add('show');
+        }, 5000); // 5 Sekunden
+
+        ctaClose.addEventListener('click', () => {
+            ctaPopup.classList.remove('show');
+        });
+    }
+
+    // Footer-Easter Egg
     const footerHexagon = document.querySelector('.footer-hexagon');
     if (footerHexagon) {
         let clickCount = 0;
@@ -247,11 +265,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hexagon-Animation nach dem Laden entfernen
+    // Hexagon-Animation nach dem Laden entfernen und in Footer verschieben
     const hexagonAnimation = document.querySelector('.hexagon-animation');
     if (hexagonAnimation) {
         setTimeout(() => {
             hexagonAnimation.style.display = 'none';
+        }, 1500);
+    }
+
+    // Footer-Hexagon nach Animation sichtbar machen
+    const footerHexagonContainer = document.querySelector('.footer-hexagon-container');
+    if (footerHexagonContainer) {
+        setTimeout(() => {
+            footerHexagonContainer.style.display = 'flex';
         }, 1500);
     }
 
