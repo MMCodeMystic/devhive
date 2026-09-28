@@ -42,5 +42,18 @@
   - Bilder in `lernreise.json` und `historisch.json` eingebunden.
 
 
+### [1.5] - 28.09.2026
+- **Backend**:
+  - SQL-Tabelle `kontaktanfragen` für Kontaktformular erstellt.
+  - Flooding-Schutz: Prüft, ob `name`, `ip_adresse` oder `telefon` bereits eine ungelesene Nachricht hat.
+  - Prüfungsbenachrichtigung: Popup mit 4 Optionen (Standard: "Ich bin ein Bot").
+- **Frontend**:
+  - Kontaktformular mit Validierung (Pflichtfelder, E-Mail/Telefon bei bestimmten Kategorien).
+  - Autofit-Textarea für Nachrichtenfeld.
+  - Prüfungs-Popup-Styling.
+- **Datenbank**:
+  - MySQL-Tabelle mit Indizes für schnelle Abfragen.
+
+
 
 
