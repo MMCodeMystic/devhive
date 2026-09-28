@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?? 'DevHive'; ?></title>
+    <!-- Favicon für Dark Mode (Standard) -->
+    <link id="favicon" rel="icon" href="assets/favicon/favicon-dark.ico" type="image/x-icon">
     <!-- CSS-Dateien -->
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">

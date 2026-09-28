@@ -1,4 +1,15 @@
 <footer class="footer">
+    <!-- Platonische Körper im Hintergrund (5 Körper) -->
+    <div class="platonische-koerper-hintergrund">
+        <div class="koerper tetraeder"></div>
+        <div class="koerper wuerfel"></div>
+        <div class="koerper oktaeder"></div>
+        <div class="koerper dodekaeder"></div>
+        <div class="koerper ikosaeder"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+
     <div class="footer-hexagon-container">
         <svg class="footer-hexagon" viewBox="0 0 100 100" width="50" height="50">
             <polygon points="50,10 90,25 90,75 50,90 10,75 10,25" fill="none" stroke="var(--accent-blue)" stroke-width="2"/>
@@ -7,8 +18,6 @@
     <p>&copy; <?php echo date('Y'); ?> DevHive | M. Meier</p>
 </footer>
 
-<!-- Platonische Körper im Hintergrund -->
-<div class="platonische-koerper-hintergrund"></div>
 
 <!-- CTA-Popup -->
 <div class="cta-popup" id="cta-popup">
@@ -22,6 +31,6 @@
     </div>
 </div>
 
-<script src="js/script.js"></script>
+
 </body>
 </html>

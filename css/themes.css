@@ -1,10 +1,20 @@
-/* ===== Bright Mode Anpassungen ===== */
+:root {
+    --bg: #2B2B2B;
+    --text: #A8B8C8; /* Hell im Dark Mode */
+    --text-dark: #1a1a1a; /* Dunkler Text für Bright Mode */
+    --accent-red: #6D2E46;
+    --accent-blue: #1A3A5C;
+    --accent-blue-bright: #0a243a; /* Dunkleres Blau für Bright Mode */
+    --card-bg: #3A3A3A;
+    --nav-bg: #1E1E1E;
+}
+
 .bright-mode {
     --bg: #F5F0E6;
-    --text: #333333;
+    --text: #333333; /* Dunkler im Bright Mode */
     --text-dark: #1a1a1a;
     --accent-red: #8B2E46;
-    --accent-blue: #0a243a;
+    --accent-blue: #0a243a; /* Dunkleres Blau */
     --accent-blue-bright: #0a243a;
     --card-bg: #E8E0D6;
     --nav-bg: #D4C8BC;

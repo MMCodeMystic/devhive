@@ -117,15 +117,17 @@ async function loadHistorischeTimeline() {
         });
     });
 
-    // Filter-Logik
+    // Filter-Logik für historische Timeline
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const filter = button.getAttribute('data-filter');
+
             container.querySelectorAll('.timeline-item').forEach(item => {
-                if (filter === 'alle' || item.classList.contains(filter)) {
+                const itemCategory = item.className.split(' ').find(cls => cls.startsWith('theorie') || cls.startsWith('hardware'));
+                if (filter === 'alle' || (itemCategory && itemCategory.includes(filter))) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
@@ -135,13 +137,15 @@ async function loadHistorischeTimeline() {
     });
 }
 
-// Haupt-Event-Listener
+// Haupt-Event-Listener (nur einmal!)
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme-Toggle
+    // Theme-Toggle + Favicon-Wechsel
     const darkModeBtn = document.getElementById('dark-mode-btn');
     const brightModeBtn = document.getElementById('bright-mode-btn');
     const body = document.body;
+    const favicon = document.getElementById('favicon');
 
+    // Lade gespeichertes Theme + Favicon
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'bright') {
         body.classList.add('bright-mode');
@@ -149,14 +153,19 @@ document.addEventListener('DOMContentLoaded', () => {
             brightModeBtn.classList.add('active');
             darkModeBtn.classList.remove('active');
         }
+        if (favicon) favicon.href = "assets/favicon/favicon-bright.ico";
+    } else {
+        if (favicon) favicon.href = "assets/favicon/favicon-dark.ico";
     }
 
+    // Theme-Toggle-Logik
     if (darkModeBtn && brightModeBtn) {
         darkModeBtn.addEventListener('click', () => {
             body.classList.remove('bright-mode');
             darkModeBtn.classList.add('active');
             brightModeBtn.classList.remove('active');
             localStorage.setItem('theme', 'dark');
+            if (favicon) favicon.href = "assets/favicon/favicon-dark.ico";
         });
 
         brightModeBtn.addEventListener('click', () => {
@@ -164,10 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
             brightModeBtn.classList.add('active');
             darkModeBtn.classList.remove('active');
             localStorage.setItem('theme', 'bright');
+            if (favicon) favicon.href = "assets/favicon/favicon-bright.ico";
         });
     }
 
-    // CTA-Popup (angepasst: Verlinkt zu Timelines)
+    // CTA-Popup
     const ctaPopup = document.getElementById('cta-popup');
     const ctaClose = document.getElementById('cta-close');
     if (ctaPopup && ctaClose) {
@@ -243,27 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3 Platonische Körper im Hintergrund
+    // Platonische Körper im Hintergrund (5 Körper)
     const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
     if (hintergrund && hintergrund.children.length === 0) {
-        const koerper = ['tetraeder', 'wuerfel', 'oktaeder'];
-        koerper.forEach((typ) => {
-            const koerperElement = document.createElement('div');
-            koerperElement.className = `koerper ${typ}`;
-            hintergrund.appendChild(koerperElement);
-        });
-    }
-});
-
-// ... (vorheriger Code bleibt gleich)
-
-document.addEventListener('DOMContentLoaded', () => {
-    // ... (vorheriger Code bleibt gleich)
-
-    // Platonische Körper im Hintergrund (3 Körper)
-    const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
-    if (hintergrund && hintergrund.children.length === 0) {
-        const koerper = ['tetraeder', 'wuerfel', 'oktaeder'];
+        const koerper = ['tetraeder', 'wuerfel', 'oktaeder', 'dodekaeder', 'ikosaeder'];
         koerper.forEach((typ) => {
             const koerperElement = document.createElement('div');
             koerperElement.className = `koerper ${typ}`;

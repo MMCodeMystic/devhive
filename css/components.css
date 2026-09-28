@@ -178,3 +178,68 @@
     color: white;
     border-color: var(--accent-blue);
 }
+
+/* ===== Einstellungen-Seite ===== */
+.settings-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.setting-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+}
+
+.setting-card h3 {
+    color: var(--accent-red);
+    margin-bottom: 1rem;
+}
+
+.theme-toggle, .animation-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.theme-btn {
+    background: var(--card-bg);
+    color: var(--text);
+    border: 1px solid var(--accent-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.theme-btn.active {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+.animation-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Code-Hervorhebung im Bright Mode */
+.bright-mode pre {
+    background: #f5f5f5;
+    color: var(--text-dark);
+    border-left: 3px solid var(--accent-blue-bright);
+}
+
+.bright-mode code .tag { color: #d63333; }
+.bright-mode code .attr { color: #007788; }
+.bright-mode code .str { color: #008080; }
+.bright-mode code .php { color: #8800cc; }
+.bright-mode code .js { color: #cc7700; }
+.bright-mode code .comment { color: #555; font-style: italic; }

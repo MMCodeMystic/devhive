@@ -137,5 +137,11 @@ css/
 ├── animations.css    # Animationen (Platonische Körper, Hexagon, Hover-Effekte)
 └── themes.css        # Themen (Dark Mode, Bright Mode)
 
+----
+
+assets/
+└── favicon/
+└── favicon.ico  /* Enthält alle Größen */
+
 
 

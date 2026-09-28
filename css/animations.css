@@ -59,27 +59,29 @@
     50% { transform: scale(1.1); }
 }
 
-/* ===== Animierter Hintergrund (3 Platonische Körper) ===== */
+/* ===== Platonische Körper Hintergrund ===== */
 .platonische-koerper-hintergrund {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* Hinter allem */
     pointer-events: none;
-    opacity: 0.1;
+    opacity: 0.2; /* Sichtbarer machen */
+    overflow: hidden;
 }
 
+/* 3 Körper mit klaren Positionen und Animationen */
 .platonische-koerper-hintergrund .koerper {
     position: absolute;
-    border: 1px solid rgba(26, 58, 92, 0.5);
-    opacity: 0.5;
+    border: 1px solid rgba(26, 58, 92, 0.8);
+    opacity: 0.8;
     animation: float 25s linear infinite;
 }
 
-/* 3 Platonische Körper */
-.platonische-koerper-hintergrund .koerper:nth-child(1) {
+/* Tetraeder (Dreieckspyramide) */
+.platonische-koerper-hintergrund .koerper.tetraeder {
     top: 20%;
     left: 10%;
     width: 40px;
@@ -88,17 +90,19 @@
     animation-delay: 0s;
 }
 
-.platonische-koerper-hintergrund .koerper:nth-child(2) {
+/* Würfel */
+.platonische-koerper-hintergrund .koerper.wuerfel {
     top: 60%;
     left: 50%;
     width: 50px;
     height: 50px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(26, 58, 92, 0.2);
     animation-delay: 7s;
 }
 
-.platonische-koerper-hintergrund .koerper:nth-child(3) {
-    top: 80%;
+/* Oktaeder (Doppelpyramide) */
+.platonische-koerper-hintergrund .koerper.oktaeder {
+    top: 10%;
     left: 80%;
     width: 30px;
     height: 30px;
@@ -107,9 +111,15 @@
 }
 
 @keyframes float {
-    0% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
-    50% { transform: translateY(-30px) rotateX(180deg) rotateY(180deg); }
-    100% { transform: translateY(0) rotateX(360deg) rotateY(360deg); }
+    0% {
+        transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotateX(180deg) rotateY(180deg);
+    }
+    100% {
+        transform: translateY(0) rotateX(360deg) rotateY(360deg);
+    }
 }
 
 /* ===== CTA-Popup ===== */
