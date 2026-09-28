@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordToggle = document.getElementById('password-toggle');
 
     if (passwordToggle && passwordInput) {
+        // Speichere das ursprüngliche HTML des Buttons
+        const originalHTML = passwordToggle.innerHTML;
+
         passwordToggle.addEventListener('mousedown', () => {
             passwordInput.type = 'text';
         });

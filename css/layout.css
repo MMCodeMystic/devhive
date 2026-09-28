@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 2rem;
     background: var(--nav-bg);
     position: sticky;
     top: 0;
@@ -24,6 +24,7 @@
     color: var(--accent-red);
 }
 
+/* ===== Burger-Menü ===== */
 .burger-menu {
     background: none;
     border: none;
@@ -60,6 +61,24 @@
     z-index: 99;
     overflow-y: auto;
 }
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+
+    .navbar {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        justify-content: flex-end !important;
+        height: auto !important;
+        padding: 0 !important;
+        transform: none !important;
+        width: auto !important;
+        background: none !important;
+    }
+}
+
 
 .navbar.active {
     transform: translateX(0);
@@ -101,6 +120,22 @@
 .nav-links a:hover::after {
     width: 100%;
 }
+
+/* ===== Überschriften für Startseite ===== */
+.section-title {
+    color: var(--accent-green);
+    margin: 2rem 0 1rem 2rem; /* Abstand links und oben */
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
 
 /* ===== Footer ===== */
 .footer {

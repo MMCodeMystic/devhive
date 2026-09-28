@@ -7,7 +7,7 @@
     <!-- Favicon für Dark Mode (Standard) -->
     <link id="favicon" rel="icon" href="assets/favicon/favicon-dark.ico" type="image/x-icon">
     <!-- CSS-Dateien -->
-    <link rel="stylesheet" href="css/style.css">
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">

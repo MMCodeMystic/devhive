@@ -42,7 +42,7 @@
   - Bilder in `lernreise.json` und `historisch.json` eingebunden.
 
 
-### [1.5] - 28.09.2026
+### [1.45] - 28.09.2026
 - **Backend**:
   - SQL-Tabelle `kontaktanfragen` für Kontaktformular erstellt.
   - Flooding-Schutz: Prüft, ob `name`, `ip_adresse` oder `telefon` bereits eine ungelesene Nachricht hat.
@@ -113,7 +113,18 @@
   - Alle Stile in `base.css`, `layout.css`, `components.css`, etc.
   - Alle Skripte in `utils.js`, `main.js`, `timeline.js`, `login.js`, `cards.js`.
 
+## Changelog
 
+### [1.6] - 28.09.2026
+- **Frontend:**
+  - **Login-Popup:**
+    - Passwort-Toggle mit Hexagon-Button (kein Auge-Icon mehr).
+  - **Known Issues:**
+    - Burger-Menü funktioniert nicht.
+    - Seiten werden nicht komplett mit Theme formatiert (nur erste Bildschirmseite).
+    - Timeline-Seiten: Formatierung bricht nach erstem Bildschirm ab.
+    - Kontakt-Link in Navbar wird doppelt angezeigt.
+    - Cards in Timeline: Formatierung fehlerhaft unterhalb des ersten Bildschirms.
 
 
 

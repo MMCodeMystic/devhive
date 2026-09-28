@@ -31,3 +31,18 @@
         padding: 1rem;
     }
 }
+
+/* ===== Kacheln für Cards ===== */
+.card {
+    background:
+            linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+            url('../assets/images/kachel_dark_01.png') repeat;
+    background-size: 100px 100px;
+}
+
+.bright-mode .card {
+    background:
+            linear-gradient(rgba(220, 220, 220, 200), rgba(200, 200, 200, 0.7)),
+            url('../assets/images/kachel_bright_01.png') repeat;
+    background-size: 100px 100px;
+}

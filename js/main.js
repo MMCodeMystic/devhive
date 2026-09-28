@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme-Toggle + Favicon-Wechsel
+    // ===== Theme-Toggle + Favicon-Wechsel =====
     const darkModeBtn = document.getElementById('dark-mode-btn');
     const brightModeBtn = document.getElementById('bright-mode-btn');
     const body = document.body;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Login-Popup
+    // ===== Login-Popup =====
     const loginBtn = document.getElementById('login-btn');
     const loginPopup = document.getElementById('login-popup');
     const closeLoginBtn = document.getElementById('close-login');
@@ -52,23 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Passwort anzeigen/verstecken
+    // ===== Passwort anzeigen/verstecken (Hexagon bleibt erhalten) =====
     const passwordToggle = document.getElementById('password-toggle');
     const passwordInput = document.getElementById('password');
 
     if (passwordToggle && passwordInput) {
-        passwordToggle.addEventListener('click', () => {
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                passwordToggle.textContent = '🙈';
-            } else {
-                passwordInput.type = 'password';
-                passwordToggle.textContent = '👁️';
-            }
+        passwordToggle.addEventListener('mousedown', () => {
+            passwordInput.type = 'text';
+        });
+
+        passwordToggle.addEventListener('mouseup', () => {
+            passwordInput.type = 'password';
+        });
+
+        // Für Touch-Geräte
+        passwordToggle.addEventListener('touchstart', () => {
+            passwordInput.type = 'text';
+        });
+
+        passwordToggle.addEventListener('touchend', () => {
+            passwordInput.type = 'password';
         });
     }
 
-    // Kontakt-Link in Navbar hinzufügen
+    // ===== Kontakt-Link in Navbar =====
     const navLinks = document.querySelector('.nav-links');
     if (navLinks) {
         const kontaktLink = document.createElement('li');
@@ -76,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.appendChild(kontaktLink);
     }
 
-    // Hexagon-Animation → Footer
+    // ===== Hexagon-Animation → Footer =====
     const hexagonAnimation = document.querySelector('.hexagon-animation');
     const footerHexagonContainer = document.querySelector('.footer-hexagon-container');
     if (hexagonAnimation && footerHexagonContainer) {
@@ -86,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     }
 
-    // CTA-Popup
+    // ===== CTA-Popup =====
     const ctaPopup = document.getElementById('cta-popup');
     const ctaClose = document.getElementById('cta-close');
     if (ctaPopup && ctaClose) {
@@ -99,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Footer-Easter Egg
+    // ===== Footer-Easter Egg =====
     const footerHexagon = document.querySelector('.footer-hexagon');
     if (footerHexagon) {
         let clickCount = 0;
@@ -112,9 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Burger-Menü
+    // ===== Burger-Menü =====
     const burgerMenu = document.querySelector('.burger-menu');
     const navbar = document.querySelector('.navbar');
+
     if (burgerMenu && navbar) {
         burgerMenu.addEventListener('click', () => {
             const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true';
@@ -122,8 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.toggle('active');
         });
 
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
+        // Schließe das Menü, wenn auf einen Link geklickt wird
+        const navLinksAll = document.querySelectorAll('.nav-links a');
+        navLinksAll.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
                     burgerMenu.setAttribute('aria-expanded', 'false');
@@ -133,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Autofit für Textarea im Kontaktformular
+    // ===== Autofit für Textarea =====
     const textarea = document.getElementById('nachricht');
     if (textarea) {
         textarea.addEventListener('input', () => {
@@ -142,21 +151,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lade Skripte für Timelines, Filter, etc.
+    // ===== Kachel-Hintergrund (zufällig pro Seite) =====
+    const isBrightMode = body.classList.contains('bright-mode');
+    const kachelPrefix = isBrightMode ? 'kachel_bright_' : 'kachel_dark_';
+    const kachelCount = 5;
+    const randomKachel = Math.floor(Math.random() * kachelCount) + 1;
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                url('assets/images/${kachelPrefix}${randomKachel.toString().padStart(2, '0')}.png') repeat;
+            background-size: 200px 200px;
+            z-index: -1;
+            pointer-events: none;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // ===== Skripte dynamisch laden =====
     if (document.getElementById('lernreise-timeline')) {
-        loadScript('js/timeline.js');
+        const script = document.createElement('script');
+        script.src = 'js/timeline.js';
+        document.body.appendChild(script);
     }
     if (document.getElementById('historisch-timeline')) {
-        loadScript('js/timeline.js');
+        const script = document.createElement('script');
+        script.src = 'js/timeline.js';
+        document.body.appendChild(script);
     }
     if (document.getElementById('login-popup')) {
-        loadScript('js/login.js');
+        const script = document.createElement('script');
+        script.src = 'js/login.js';
+        document.body.appendChild(script);
     }
 });
-
-// Hilfsfunktion zum Laden von Skripten
-function loadScript(url) {
-    const script = document.createElement('script');
-    script.src = url;
-    document.body.appendChild(script);
-}

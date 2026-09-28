@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevHive | Portfolio & Lernreise</title>
-    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
     <?php
@@ -20,7 +20,7 @@
         </section>
 
         <section id="timelines" class="section">
-            <h2>Timelines</h2>
+            <h2 class="section-title">Timelines</h2>
             <div class="cards">
                 <div class="card">
                     <h3>Technische Lernreise</h3>
@@ -36,7 +36,7 @@
         </section>
 
         <section id="projekte" class="section">
-            <h2>Projekte</h2>
+            <h2 class="section-title">Projekte</h2>
             <div class="cards">
                 <div class="card">
                     <h3>Tierheim</h3>
