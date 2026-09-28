@@ -43,13 +43,68 @@
                 <li><a href="einstellungen.php">Einstellungen</a></li>
             </ul>
         </nav>
+        <!-- Animierte Platonische Körper im Hintergrund -->
+        <div class="platonische-koerper-hintergrund">
+            <div class="koerper tetraeder"></div>
+            <div class="koerper wuerfel"></div>
+            <div class="koerper oktaeder"></div>
+            <div class="koerper dodekaeder"></div>
+            <div class="koerper ikosaeder"></div>
+        </div>
+
+        <!-- Login-Button (in Navbar) -->
+        <li class="nav-item">
+            <button id="login-btn" class="login-btn">Login</button>
+        </li>
+
+        <!-- Login-Popup -->
+        <div class="login-popup" id="login-popup">
+            <div class="login-container">
+                <span class="close-btn" id="close-login">&times;</span>
+                <h2>Login</h2>
+                <form id="login-form" method="post" action="login.php">
+                    <div class="form-group">
+                        <label for="username">Benutzername:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Passwort:</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="password-strength">
+                            <div class="strength-bar" id="strength-bar"></div>
+                            <div class="strength-text" id="strength-text">Passwortstärke: Schwach</div>
+                        </div>
+                        <div class="password-tip">
+                            <strong>Tipps für sichere Passwörter:</strong>
+                            <ul>
+                                <li>Mindestens 12 Zeichen</li>
+                                <li>Groß- und Kleinbuchstaben</li>
+                                <li>Zahlen und Sonderzeichen</li>
+                                <li>Keine persönlichen Daten</li>
+                            </ul>
+                            <div class="entropy-example">
+                                <strong>Beispiel:</strong>
+                                <p>Ein Passwort wie <code>Tr0ub4dour&3</code> hat eine Entropie von ~60 Bit.</p>
+                                <p>Mit einem Quantencomputer: ~1 Jahr zum Knacken.</p>
+                                <p>Ein Passwort wie <code>aBc123!@#</code> hat eine Entropie von ~30 Bit.</p>
+                                <p>Mit einem Quantencomputer: ~1 Sekunde zum Knacken.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Einloggen</button>
+                </form>
+                <div class="security-info">
+                    <strong>Sicherheitsmaßnahmen:</strong>
+                    <ul>
+                        <li>BCrypt-Passwort-Hashing (Salt + Pepper)</li>
+                        <li>HTTPS-Verschlüsselung (TLS 1.3)</li>
+                        <li>Rate-Limiting (5 Versuche pro Minute)</li>
+                        <li>CSRF-Schutz</li>
+                        <li>SQL-Injection-Schutz (Prepared Statements)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </header>
 
-    <!-- Animierte Platonische Körper im Hintergrund -->
-    <div class="platonische-koerper-hintergrund">
-        <div class="koerper tetraeder"></div>
-        <div class="koerper wuerfel"></div>
-        <div class="koerper oktaeder"></div>
-        <div class="koerper dodekaeder"></div>
-        <div class="koerper ikosaeder"></div>
-    </div>

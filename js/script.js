@@ -126,8 +126,12 @@ async function loadHistorischeTimeline() {
             const filter = button.getAttribute('data-filter');
 
             container.querySelectorAll('.timeline-item').forEach(item => {
-                const itemCategory = item.className.split(' ').find(cls => cls.startsWith('theorie') || cls.startsWith('hardware'));
-                if (filter === 'alle' || (itemCategory && itemCategory.includes(filter))) {
+                // Prüfe alle Kategorien des Items
+                const itemCategories = Array.from(item.classList).filter(cls =>
+                    cls === 'theorie' || cls === 'hardware-planung' || cls === 'hardware-herstellung'
+                );
+
+                if (filter === 'alle' || itemCategories.includes(filter)) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
@@ -354,6 +358,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Bild-Klick-Logik für Timelines
+    const timelineImages = document.querySelectorAll('.timeline-bild');
+    timelineImages.forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation(); // Verhindere, dass das Klick-Event auf das timeline-item durchschlägt
+            const timelineItem = img.closest('.timeline-item');
+            timelineItem.classList.toggle('expanded');
+        });
+    });
+
+// Schließe alle anderen Timeline-Items, wenn eines geöffnet wird
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            // Schließe alle anderen Items
+            timelineItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('expanded');
+                }
+            });
+        });
+    });
+
     // Platonische Körper im Hintergrund (5 Körper)
     const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
     if (hintergrund && hintergrund.children.length === 0) {
@@ -364,4 +391,82 @@ document.addEventListener('DOMContentLoaded', () => {
             hintergrund.appendChild(koerperElement);
         });
     }
+    // Login-Popup
+    const loginBtn = document.getElementById('login-btn');
+    const loginPopup = document.getElementById('login-popup');
+    const closeLoginBtn = document.getElementById('close-login');
+    const passwordInput = document.getElementById('password');
+    const strengthBar = document.getElementById('strength-bar');
+    const strengthText = document.getElementById('strength-text');
+
+    if (loginBtn && loginPopup && closeLoginBtn) {
+        loginBtn.addEventListener('click', () => {
+            loginPopup.classList.add('show');
+        });
+
+        closeLoginBtn.addEventListener('click', () => {
+            loginPopup.classList.remove('show');
+        });
+    }
+
+// Passwortstärke berechnen
+    if (passwordInput && strengthBar && strengthText) {
+        passwordInput.addEventListener('input', () => {
+            const password = passwordInput.value;
+            let strength = 0;
+
+            // Länge
+            if (password.length >= 12) strength += 2;
+            else if (password.length >= 8) strength += 1;
+
+            // Groß- und Kleinbuchstaben
+            if (/[A-Z]/.test(password) && /[a-z]/.test(password)) strength += 1;
+
+            // Zahlen
+            if (/\d/.test(password)) strength += 1;
+
+            // Sonderzeichen
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+
+            // Entropie berechnen (vereinfacht)
+            const entropy = Math.log2(Math.pow(94, password.length)); // 94 mögliche Zeichen
+            const yearsToCrack = Math.pow(2, entropy) / (1e15 * 3600 * 24 * 365); // 1e15 Hashes/Sekunde (Quantencomputer)
+
+            // Anzeige aktualisieren
+            let width = 0;
+            let color = '';
+            let text = '';
+
+            if (strength <= 1) {
+                width = 25;
+                color = '#ff4d4d'; // Rot
+                text = 'Passwortstärke: Schwach (Entropie: ~' + Math.round(entropy) + ' Bit, ~' + (yearsToCrack < 1 ? '<1 Sekunde' : Math.round(yearsToCrack) + ' Jahre zum Knacken)');
+            } else if (strength <= 2) {
+                width = 50;
+                color = '#ffa500'; // Orange
+                text = 'Passwortstärke: Mittel (Entropie: ~' + Math.round(entropy) + ' Bit, ~' + (yearsToCrack < 1 ? '<1 Sekunde' : Math.round(yearsToCrack) + ' Jahre zum Knacken)');
+            } else if (strength <= 3) {
+                width = 75;
+                color = '#4CAF50'; // Grün
+                text = 'Passwortstärke: Stark (Entropie: ~' + Math.round(entropy) + ' Bit, ~' + (yearsToCrack < 1 ? '<1 Sekunde' : Math.round(yearsToCrack) + ' Jahre zum Knacken)');
+            } else {
+                width = 100;
+                color = '#00ff00'; // Hellgrün
+                text = 'Passwortstärke: Sehr stark (Entropie: ~' + Math.round(entropy) + ' Bit, ~' + (yearsToCrack < 1 ? '<1 Sekunde' : Math.round(yearsToCrack) + ' Jahre zum Knacken)');
+            }
+
+            strengthBar.style.width = width + '%';
+            strengthBar.style.background = color;
+            strengthText.textContent = text;
+        });
+    }
+
+// Kontakt-Link in Navbar hinzufügen
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        const kontaktLink = document.createElement('li');
+        kontaktLink.innerHTML = '<a href="kontakt.php">Kontakt</a>';
+        navLinks.appendChild(kontaktLink);
+    }
+
 });

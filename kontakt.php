@@ -21,6 +21,16 @@ $success = '';
 $prüfungsnachricht = false;
 $prüfungsstatus = 'bot'; // Standardauswahl
 
+// Testdaten-Vorausfüllung
+if (isset($_GET['test']) && $_GET['test'] === 'true') {
+    $name = 'Max Mustermann';
+    $kategorie = 'auftragsanfrage';
+    $nachricht = 'Das ist eine Testnachricht. Bitte ignorieren.';
+    $email = 'max.mustermann@example.com';
+    $telefon = '+49 123 456789';
+    $kontaktart = 'email';
+}
+
 // Formular wurde abgesendet
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Eingaben bereinigen
@@ -102,6 +112,11 @@ if (isset($_POST['prüfungsstatus'])) {
     </section>
 
     <div class="form-container">
+        <!-- Test-Button -->
+        <div class="test-mode">
+            <a href="?test=true" class="test-btn">Testdaten vorausfüllen</a>
+        </div>
+
         <?php if ($error): ?>
             <div class="alert error"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
@@ -141,6 +156,7 @@ if (isset($_POST['prüfungsstatus'])) {
             </div>
         <?php else: ?>
             <!-- Normales Kontaktformular -->
+
             <form class="kontakt" id="kontaktform" method="post">
                 <div class="form-group">
                     <label for="name"><strong>Name:*</strong></label>

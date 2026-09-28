@@ -12,6 +12,7 @@
     include 'header.php';
     ?>
 
+
     <main>
         <section class="hero">
             <h1>Willkommen im DevHive</h1>
