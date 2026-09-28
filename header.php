@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title ?? 'DevHive'; ?></title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS-Dateien -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/timelines.css">
+    <link rel="stylesheet" href="css/themes.css">
 </head>
 <body>
     <header class="header">

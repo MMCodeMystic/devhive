@@ -1,0 +1,151 @@
+/* ===== Header & Navbar ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-red);
+}
+
+.burger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    padding: 0.5rem;
+    z-index: 101;
+    display: block;
+}
+
+.burger-menu[aria-expanded="true"] .hexagon {
+    transform: rotate(90deg);
+}
+
+.burger-menu .hexagon {
+    transition: transform 0.3s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.navbar {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: var(--nav-bg);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 99;
+    overflow-y: auto;
+}
+
+.navbar.active {
+    transform: translateX(0);
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    width: 100%;
+    flex-direction: column;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s;
+    font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--nav-bg);
+    margin-top: auto;
+    z-index: 100;
+    position: relative;
+}
+
+/* ===== Main Layout ===== */
+main {
+    flex: 1;
+    padding-bottom: 100px;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .navbar {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        justify-content: flex-end !important;
+        height: auto !important;
+        padding: 0 !important;
+        transform: none !important;
+        width: auto !important;
+        background: none !important;
+    }
+
+    .nav-links {
+        flex-direction: row !important;
+        gap: 2rem !important;
+    }
+
+    .nav-links a {
+        font-size: 1rem !important;
+    }
+}

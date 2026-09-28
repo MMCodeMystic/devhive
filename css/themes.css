@@ -1,0 +1,25 @@
+/* ===== Bright Mode Anpassungen ===== */
+.bright-mode {
+    --bg: #F5F0E6;
+    --text: #333333;
+    --text-dark: #1a1a1a;
+    --accent-red: #8B2E46;
+    --accent-blue: #0a243a;
+    --accent-blue-bright: #0a243a;
+    --card-bg: #E8E0D6;
+    --nav-bg: #D4C8BC;
+}
+
+/* Code-Hervorhebung im Bright Mode */
+.bright-mode pre {
+    background: #f5f5f5;
+    color: var(--text-dark);
+    border-left: 3px solid var(--accent-blue-bright);
+}
+
+.bright-mode code .tag { color: #d63333; }
+.bright-mode code .attr { color: #007788; }
+.bright-mode code .str { color: #008080; }
+.bright-mode code .php { color: #8800cc; }
+.bright-mode code .js { color: #cc7700; }
+.bright-mode code .comment { color: #555; font-style: italic; }

@@ -254,3 +254,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ... (vorheriger Code bleibt gleich)
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (vorheriger Code bleibt gleich)
+
+    // Platonische Körper im Hintergrund (3 Körper)
+    const hintergrund = document.querySelector('.platonische-koerper-hintergrund');
+    if (hintergrund && hintergrund.children.length === 0) {
+        const koerper = ['tetraeder', 'wuerfel', 'oktaeder'];
+        koerper.forEach((typ) => {
+            const koerperElement = document.createElement('div');
+            koerperElement.className = `koerper ${typ}`;
+            hintergrund.appendChild(koerperElement);
+        });
+    }
+});

@@ -129,4 +129,13 @@ devhive/
 &#x20;           └── ...
 
 
+------------------
+css/
+├── base.css          # Grundstile (Variablen, Reset, Fonts)
+├── layout.css        # Layout (Header, Footer, Navbar, Main)
+├── components.css    # Komponenten (Cards, Timelines, Buttons)
+├── animations.css    # Animationen (Platonische Körper, Hexagon, Hover-Effekte)
+└── themes.css        # Themen (Dark Mode, Bright Mode)
+
+
 

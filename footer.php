@@ -7,7 +7,7 @@
     <p>&copy; <?php echo date('Y'); ?> DevHive | M. Meier</p>
 </footer>
 
-<!-- 3 Platonische Körper im Hintergrund -->
+<!-- Platonische Körper im Hintergrund -->
 <div class="platonische-koerper-hintergrund"></div>
 
 <!-- CTA-Popup -->
