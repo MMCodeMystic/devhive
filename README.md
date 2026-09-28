@@ -143,5 +143,14 @@ assets/
 └── favicon/
 └── favicon.ico  /* Enthält alle Größen */
 
+------
+
+js/
+├── main.js          # Haupt-Event-Listener, globale Funktionen
+├── timeline.js      # Timeline-Funktionen (loadTechnischeTimeline, loadHistorischeTimeline)
+├── login.js         # Login-Popup, Passwortstärke, etc.
+├── filter.js        # Filter-Logik für Timelines
+└── utils.js         # Hilfsfunktionen (escapeHtml, highlightCode)
+
 
 

@@ -53,6 +53,38 @@
   - Prüfungs-Popup-Styling.
 - **Datenbank**:
   - MySQL-Tabelle mit Indizes für schnelle Abfragen.
+- ## Changelog
+
+### [WIP - 28.09.2026]
+- **Frontend:**
+  - **Kontaktformular:**
+    - Vollständiges Design für Desktop und Mobile.
+    - Validierung für Pflichtfelder (Name, Nachricht, Kategorie).
+    - Autofit-Textarea für Nachrichtenfeld.
+    - Testdaten-Vorausfüllung für schnelles Testen.
+  - **Login-Popup:**
+    - Hexagon-Button für Passwort-Toggle (Anzeige bei Klick).
+    - Passwortstärke-Anzeige mit Entropie-Berechnung.
+    - Sicherheitshinweise und Tipps für sichere Passwörter.
+  - **UI/UX:**
+    - Footer-Links für Datenschutz und Impressum.
+    - Mobile-Optimierung für Login-Popup und Kontaktformular.
+
+- **Backend (SQL):**
+  - Datenbanktabellen für Benutzerrollen (`rollen`, `benutzer`, `login_versuche`, `sitzungen`).
+  - Vorbereitung für Flooding-Schutz in Kontaktformular.
+
+- **Known Issues (temporär):**
+  - Timelines (technisch & historisch) werden aktuell nicht angezeigt (UI-Stabilisierung).
+  - Cards auf der Homepage funktionieren nicht (Priorisierung von Kontaktformular/Login).
+  - Filter-Buttons für Timelines reagieren nicht (wird in nächster Iteration behoben).
+
+- **Nächste Schritte:**
+  - Timelines und Cards wiederherstellen.
+  - Filter-Logik für Timelines finalisieren.
+  - Bild-Animationen für Timeline-Items implementieren.
+
+
 
 
 

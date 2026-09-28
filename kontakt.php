@@ -106,6 +106,7 @@ if (isset($_POST['prüfungsstatus'])) {
 ?>
 
 <main>
+    <link rel="stylesheet" href="css/kontakt.css">
     <section class="hero">
         <h1>Kontakt</h1>
         <p>Schreibe mir eine Nachricht – ich freue mich auf deine Anfrage!</p>

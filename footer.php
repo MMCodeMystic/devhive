@@ -8,7 +8,7 @@
         <div class="koerper ikosaeder"></div>
     </div>
 
-    <script src="js/script.js"></script>
+
 
     <div class="footer-hexagon-container">
         <svg class="footer-hexagon" viewBox="0 0 100 100" width="50" height="50">
@@ -30,6 +30,12 @@
         <button class="cta-close" id="cta-close">&times;</button>
     </div>
 </div>
+
+<!-- JS-Importe (am Ende von <body>) -->
+<script src="js/utils.js"></script>
+<script src="js/main.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/login.js"></script>
 
 
 </body>

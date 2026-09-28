@@ -7,11 +7,20 @@
     <!-- Favicon für Dark Mode (Standard) -->
     <link id="favicon" rel="icon" href="assets/favicon/favicon-dark.ico" type="image/x-icon">
     <!-- CSS-Dateien -->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Skripte einbinden -->
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/login.js"></script>
+
 </head>
 <body>
     <header class="header">
@@ -69,7 +78,14 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Passwort:</label>
-                        <input type="password" id="password" name="password" required>
+                        <div class="password-container">
+                            <input type="password" id="password" name="password" required>
+                            <button type="button" class="password-toggle" id="password-toggle">
+                                <svg class="hexagon" viewBox="0 0 100 100" width="20" height="20">
+                                    <polygon points="50,10 90,25 90,75 50,90 10,75 10,25" fill="none" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="password-strength">
                             <div class="strength-bar" id="strength-bar"></div>
                             <div class="strength-text" id="strength-text">Passwortstärke: Schwach</div>

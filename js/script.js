@@ -117,7 +117,7 @@ async function loadHistorischeTimeline() {
         });
     });
 
-    // Filter-Logik für historische Timeline
+// Filter-Logik für historische Timeline
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -126,12 +126,12 @@ async function loadHistorischeTimeline() {
             const filter = button.getAttribute('data-filter');
 
             container.querySelectorAll('.timeline-item').forEach(item => {
-                // Prüfe alle Kategorien des Items
-                const itemCategories = Array.from(item.classList).filter(cls =>
-                    cls === 'theorie' || cls === 'hardware-planung' || cls === 'hardware-herstellung'
+                // Prüfe, ob das Item die Kategorie als Klasse hat
+                const hasCategory = Array.from(item.classList).some(cls =>
+                    cls === filter || cls.includes(filter)
                 );
 
-                if (filter === 'alle' || itemCategories.includes(filter)) {
+                if (filter === 'alle' || hasCategory) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
@@ -391,6 +391,23 @@ document.addEventListener('DOMContentLoaded', () => {
             hintergrund.appendChild(koerperElement);
         });
     }
+
+    // Passwort anzeigen/verstecken
+    const passwordToggle = document.getElementById('password-toggle');
+
+
+    if (passwordToggle && passwordInput) {
+        passwordToggle.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggle.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                passwordToggle.textContent = '👁️';
+            }
+        });
+    }
+
     // Login-Popup
     const loginBtn = document.getElementById('login-btn');
     const loginPopup = document.getElementById('login-popup');
