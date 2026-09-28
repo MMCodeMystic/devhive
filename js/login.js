@@ -1,4 +1,4 @@
-// Passwort anzeigen/verstecken (nur bei gedrücktem Button)
+// Passwort anzeigen/verstecken (Hexagon bleibt erhalten)
 document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
     const passwordToggle = document.getElementById('password-toggle');

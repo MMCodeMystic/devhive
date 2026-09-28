@@ -36,6 +36,7 @@
 <script src="js/main.js"></script>
 <script src="js/timeline.js"></script>
 <script src="js/login.js"></script>
+<script src="js/cards.js"></script>
 
 
 </body>

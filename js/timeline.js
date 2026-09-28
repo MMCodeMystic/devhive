@@ -87,7 +87,7 @@ async function loadHistorischeTimeline() {
     data.forEach(item => {
         const timelineItem = document.createElement('div');
         // Hier die korrekte Kategorie verwenden:
-        timelineItem.className = `timeline-item historisch ${item.kategorie}`;  // item.kategorie = "theorie"
+        timelineItem.className = `timeline-item historisch ${item.kategorie}`;
 
         const bildHtml = item.bild_url
             ? `<img src="${item.bild_url}" alt="${item.oberbegriff}" class="timeline-bild">`
@@ -111,13 +111,13 @@ async function loadHistorischeTimeline() {
         `;
         container.appendChild(timelineItem);
 
-        // Klick-Effekt
+        // Klick-Effekt: Zeige alle Infos + Bild wird größer
         timelineItem.addEventListener('click', () => {
             timelineItem.classList.toggle('expanded');
         });
     });
 
-    // Filter-Logik (bleibt gleich)
+    // Filter-Logik für historische Timeline
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -137,6 +137,15 @@ async function loadHistorischeTimeline() {
 
 // Bild-Klick-Logik für Timelines
 document.addEventListener('DOMContentLoaded', () => {
+    // Lade Timelines, falls vorhanden
+    if (document.getElementById('lernreise-timeline')) {
+        loadTechnischeTimeline();
+    }
+    if (document.getElementById('historisch-timeline')) {
+        loadHistorischeTimeline();
+    }
+
+    // Bild-Klick-Logik
     const timelineImages = document.querySelectorAll('.timeline-bild');
     timelineImages.forEach(img => {
         img.addEventListener('click', (e) => {

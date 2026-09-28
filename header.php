@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/login.css">
-
+    <link rel="stylesheet" href="css/timelines.css">
+    <link rel="stylesheet" href="css/kontakt.css">
+    <link rel="stylesheet" href="css/cards.css">
     <!-- Skripte einbinden -->
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>

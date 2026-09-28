@@ -84,6 +84,35 @@
   - Filter-Logik für Timelines finalisieren.
   - Bild-Animationen für Timeline-Items implementieren.
 
+## Changelog
+
+### [1.5] - 28.09.2026
+- **Frontend:**
+  - **Login-Popup:**
+    - Passwort-Toggle mit Hexagon-Button (bleibt nach Nutzung erhalten).
+    - Passwortstärke-Anzeige mit Entropie-Berechnung.
+  - **Kontaktformular:**
+    - Vollständiges Design für Desktop und Mobile.
+    - Testdaten-Vorausfüllung.
+  - **Timelines:**
+    - Technische und historische Timelines werden angezeigt.
+    - Filter-Funktion für historische Timeline korrigiert.
+  - **Cards:**
+    - Modularisierung: `cards.css` und `cards.js` erstellt.
+    - Klick-Logik für Cards auf der Startseite.
+  - **UI/UX:**
+    - Footer-Links für Datenschutz und Impressum.
+    - Mobile-Optimierung für alle Komponenten.
+
+- **Backend (SQL):**
+  - Datenbanktabellen für Benutzerrollen (`rollen`, `benutzer`, `login_versuche`, `sitzungen`).
+  - Vorbereitung für Flooding-Schutz in Kontaktformular.
+
+- **Code-Struktur:**
+  - Modularisierung von CSS/JS (keine `style.css` oder `script.js` mehr).
+  - Alle Stile in `base.css`, `layout.css`, `components.css`, etc.
+  - Alle Skripte in `utils.js`, `main.js`, `timeline.js`, `login.js`, `cards.js`.
+
 
 
 
