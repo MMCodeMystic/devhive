@@ -145,6 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const favicon = document.getElementById('favicon');
 
+    // --- Hier beginnt dein bestehender Code ---
+
     // Lade gespeichertes Theme + Favicon
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'bright') {
@@ -175,6 +177,105 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', 'bright');
             if (favicon) favicon.href = "assets/favicon/favicon-bright.ico";
         });
+    }
+
+    // --- Hier fügst du den Kontaktformular-Code ein ---
+    // Kontaktformular-Validierung
+    const kontaktform = document.getElementById('kontaktform');
+    if (kontaktform) {
+        const kategorieSelect = document.getElementById('kategorie');
+        const emailInput = document.getElementById('email');
+        const telefonInput = document.getElementById('telefon');
+        const emailRadio = document.querySelector('input[name="kontaktart"][value="email"]');
+        const telefonRadio = document.querySelector('input[name="kontaktart"][value="telefon"]');
+
+        // Kategorie-Änderung: Aktiviere/Deaktiviere Radiobuttons
+        kategorieSelect.addEventListener('change', () => {
+            const kategorie = kategorieSelect.value;
+            const hasEmail = emailInput.value.trim() !== '';
+            const hasTelefon = telefonInput.value.trim() !== '';
+
+            emailRadio.disabled = !(hasEmail || kategorie === 'sonstiges' || kategorie === 'kommentar');
+            telefonRadio.disabled = !(hasTelefon || kategorie === 'sonstiges' || kategorie === 'kommentar');
+
+            if (kategorie === 'kontaktaufnahme' || kategorie === 'auftragsanfrage') {
+                if (hasEmail && !hasTelefon) {
+                    emailRadio.checked = true;
+                    telefonRadio.checked = false;
+                } else if (hasTelefon && !hasEmail) {
+                    telefonRadio.checked = true;
+                    emailRadio.checked = false;
+                } else if (hasEmail && hasTelefon) {
+                    emailRadio.checked = true;
+                    telefonRadio.checked = false;
+                }
+            } else {
+                emailRadio.checked = false;
+                telefonRadio.checked = false;
+            }
+        });
+
+        // E-Mail/Telefon-Änderung: Aktualisiere Radiobuttons
+        emailInput.addEventListener('input', () => {
+            const kategorie = kategorieSelect.value;
+            const hasEmail = emailInput.value.trim() !== '';
+            const hasTelefon = telefonInput.value.trim() !== '';
+
+            if (kategorie === 'kontaktaufnahme' || kategorie === 'auftragsanfrage') {
+                if (hasEmail) {
+                    emailRadio.disabled = false;
+                    if (!hasTelefon) {
+                        emailRadio.checked = true;
+                    }
+                } else {
+                    emailRadio.disabled = true;
+                    emailRadio.checked = false;
+                }
+            }
+        });
+
+        telefonInput.addEventListener('input', () => {
+            const kategorie = kategorieSelect.value;
+            const hasEmail = emailInput.value.trim() !== '';
+            const hasTelefon = telefonInput.value.trim() !== '';
+
+            if (kategorie === 'kontaktaufnahme' || kategorie === 'auftragsanfrage') {
+                if (hasTelefon) {
+                    telefonRadio.disabled = false;
+                    if (!hasEmail) {
+                        telefonRadio.checked = true;
+                    }
+                } else {
+                    telefonRadio.disabled = true;
+                    telefonRadio.checked = false;
+                }
+            }
+        });
+
+        // Formular-Validierung beim Absenden
+        kontaktform.addEventListener('submit', (e) => {
+            const kategorie = kategorieSelect.value;
+            const hasEmail = emailInput.value.trim() !== '';
+            const hasTelefon = telefonInput.value.trim() !== '';
+            const hasKontaktart = emailRadio.checked || telefonRadio.checked;
+
+            if ((kategorie === 'kontaktaufnahme' || kategorie === 'auftragsanfrage') && !hasEmail && !hasTelefon) {
+                e.preventDefault();
+                alert('Bitte gib mindestens eine E-Mail-Adresse oder Telefonnummer an, wenn du "Kontaktaufnahme" oder "Auftragsanfrage" auswählst.');
+            } else if ((kategorie === 'kontaktaufnahme' || kategorie === 'auftragsanfrage') && !hasKontaktart) {
+                e.preventDefault();
+                alert('Bitte wähle eine gewünschte Kontaktaufnahme aus.');
+            }
+        });
+
+        // Autofit für Textarea
+        const textarea = document.getElementById('nachricht');
+        if (textarea) {
+            textarea.addEventListener('input', () => {
+                textarea.style.height = 'auto';
+                textarea.style.height = textarea.scrollHeight + 'px';
+            });
+        }
     }
 
     // CTA-Popup
