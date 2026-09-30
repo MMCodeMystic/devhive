@@ -337,14 +337,15 @@
     border-radius: 2px;
     margin-bottom: 0.5rem;
     overflow: hidden;
+    position: relative;
 }
 
 .strength-bar::before {
     content: '';
     display: block;
     height: 100%;
-    width: 0%;
-    background: var(--accent-red);
+    width: var(--strength-width, 0%);
+    background: var(--strength-color, var(--accent-red));
     transition: width 0.3s, background 0.3s;
 }
 

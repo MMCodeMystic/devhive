@@ -1,4 +1,4 @@
-/* ===== Cards Module - KORRIGIERT ===== */
+/* ===== Cards Module - KORRIGIERT =====
 
 .cards {
     display: grid;
@@ -35,7 +35,80 @@
     margin-bottom: 0.5rem;
 }
 
-/* Card with iframe support */
+/* Video Card Styles */
+.video-card {
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.video-container {
+    width: 100%;
+    height: 200px;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--nav-bg);
+}
+
+.project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.project-video:hover {
+    opacity: 1;
+}
+
+.video-card:hover .project-video {
+    opacity: 1;
+}
+
+/* External Link Styles */
+.external-link {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    text-align: right;
+}
+
+.bright-mode .external-link {
+    color: var(--accent-blue-bright);
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
+
+/* Click Hint */
+.click-hint {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: var(--text);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.bright-mode .click-hint {
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Project Card with iframe */
+.card.project-card {
+    min-height: 280px;
+}
+
 .card[data-src] {
     min-height: 300px;
 }
@@ -54,24 +127,6 @@
 
 .card[data-src].loaded .click-hint {
     display: none;
-}
-
-.click-hint {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.85rem;
-    color: var(--text);
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-}
-
-.bright-mode .click-hint {
-    color: var(--text-dark);
-    background: rgba(255, 255, 255, 0.3);
 }
 
 /* Project Cards Button */

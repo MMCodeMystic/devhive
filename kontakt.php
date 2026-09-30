@@ -105,7 +105,7 @@ if (isset($_POST['prüfungsstatus'])) {
 }
 ?>
 
-<main>
+<main style="min-height: calc(100vh - 120px); padding-bottom: 2rem;">
     <link rel="stylesheet" href="css/kontakt.css">
     <section class="hero">
         <h1>Kontakt</h1>
