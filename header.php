@@ -52,6 +52,7 @@
                 <li><a href="timelines_historisch.php">Historische IT</a></li>
                 <li><a href="projekte.php">Projekte</a></li>
                 <li><a href="einstellungen.php">Einstellungen</a></li>
+                <li><a href="kontakt.php">Kontakt</a></li>
             </ul>
         </nav>
         <!-- Animierte Platonische Körper im Hintergrund -->
@@ -64,9 +65,9 @@
         </div>
 
         <!-- Login-Button (in Navbar) -->
-        <li class="nav-item">
+        <div class="nav-login">
             <button id="login-btn" class="login-btn">Login</button>
-        </li>
+        </div>
 
         <!-- Login-Popup -->
         <div class="login-popup" id="login-popup">

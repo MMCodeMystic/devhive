@@ -12,7 +12,7 @@
     border-left: 4px solid var(--accent-blue);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    color: var(--text); /* Dunklerer Text im Bright Mode */
+    color: var(--text);
 }
 
 .bright-mode .card {
@@ -103,7 +103,7 @@
     max-height: 100px;
     overflow: hidden;
     transition: max-height 0.5s ease;
-    color: var(--text); /* Dunklerer Text im Bright Mode */
+    color: var(--text);
 }
 
 .bright-mode .timeline-content {
@@ -441,7 +441,7 @@
 }
 
 .timeline-item.expanded .timeline-content p {
-    margin-right: 220px; /* Platz für das Bild */
+    margin-right: 220px;
 }
 
 @media (max-width: 768px) {

@@ -1,20 +1,24 @@
-/* ===== Gemeinsame Timeline-Stile ===== */
+/* ===== Timeline Styles - KORRIGIERT ===== */
+
 .timeline-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    width: 100%;
+    min-height: 100vh;
 }
 
 .timeline {
     position: relative;
-    padding-left: 3rem;
+    padding-left: 2rem;
     margin-top: 2rem;
+    min-height: 80vh;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 1rem;
+    left: 0.5rem;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -26,12 +30,14 @@
     margin-bottom: 2rem;
     padding-left: 1.5rem;
     border-left: 2px solid transparent;
+    min-height: 120px;
+    width: 100%;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -1.5rem;
+    left: -0.5rem;
     top: 0.5rem;
     width: 12px;
     height: 12px;
@@ -47,6 +53,7 @@
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
 }
 
 .timeline-nr {
@@ -66,6 +73,8 @@
     max-height: 150px;
     overflow: hidden;
     transition: max-height 0.3s ease, background 0.3s;
+    color: var(--text);
+    width: 100%;
 }
 
 .timeline-content:hover {
@@ -77,7 +86,19 @@
     margin-bottom: 0.5rem;
 }
 
-/* ===== Technische Lernreise ===== */
+/* Expanded state */
+.timeline-item.expanded .timeline-content {
+    max-height: 1000px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.expanded {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* Technische Lernreise */
 .timeline-item.technisch {
     border-left-color: var(--accent-blue);
 }
@@ -86,35 +107,7 @@
     background: var(--accent-blue);
 }
 
-/* Code-Hervorhebung (ohne Prism.js) */
-pre {
-    background: #1e1e1e;
-    padding: 1rem;
-    border-radius: 4px;
-    overflow-x: auto;
-    margin-top: 0.5rem;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #d4d4d4;
-    border-left: 3px solid var(--accent-blue);
-}
-
-pre code {
-    color: inherit;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-/* Syntax-Highlighting für HTML/CSS/JS/PHP */
-code .tag { color: #ff6b6b; }      /* HTML-Tags */
-code .attr { color: #4ecdc4; }     /* Attribute */
-code .str { color: #95e1d3; }      /* Strings */
-code .comment { color: #888; }    /* Kommentare */
-code .php { color: #b180e2; }      /* PHP-Code */
-code .js { color: #f5e663; }       /* JavaScript */
-
-/* ===== Historische Timeline ===== */
+/* Historische Timeline */
 .timeline-item.historisch {
     border-left-color: var(--accent-red);
 }
@@ -123,20 +116,10 @@ code .js { color: #f5e663; }       /* JavaScript */
     background: var(--accent-red);
 }
 
-/* Sepia-Effekt für historische Bilder */
-.timeline-item.historisch img {
-    max-width: 100%;
-    border-radius: 4px;
-    margin-top: 1rem;
-    filter: sepia(0.8) contrast(1.2) brightness(0.9);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Schraffuren/Muster als rote Fäden */
 .timeline-item.historisch::after {
     content: '';
     position: absolute;
-    left: -1.5rem;
+    left: -0.5rem;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -151,7 +134,7 @@ code .js { color: #f5e663; }       /* JavaScript */
     opacity: 0.5;
 }
 
-/* Kategorien-Farben für historische Timeline */
+/* Kategorien-Farben */
 .timeline-item.historisch.theorie {
     border-left-color: var(--accent-blue);
 }
@@ -162,29 +145,52 @@ code .js { color: #f5e663; }       /* JavaScript */
     border-left-color: var(--accent-red);
 }
 
-/* ===== Responsive Anpassungen ===== */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 0.5rem;
-    }
-
-    .timeline-item {
-        padding-left: 1rem;
-    }
-
-    .timeline-item::before {
-        left: -0.5rem;
-    }
-
-    .timeline-item::after {
-        left: -0.5rem;
-    }
+/* Code-Hervorhebung */
+pre {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-top: 0.5rem;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #d4d4d4;
+    border-left: 3px solid var(--accent-blue);
+    width: 100%;
 }
+
+pre code {
+    color: inherit;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Syntax-Highlighting */
+code .tag { color: #ff6b6b; }
+code .attr { color: #4ecdc4; }
+code .str { color: #95e1d3; }
+code .comment { color: #888; }
+code .php { color: #b180e2; }
+code .js { color: #f5e663; }
+
+/* Bilder */
+.timeline-bild {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 1rem;
+    filter: sepia(0.8) contrast(1.2) brightness(0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Filter-Buttons */
 .timeline-filters {
     display: flex;
     gap: 1rem;
     margin: 1rem 0;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .filter-btn {
@@ -207,25 +213,64 @@ code .js { color: #f5e663; }       /* JavaScript */
     border-color: var(--accent-blue);
 }
 
-/* HTML-Tags */
-code .tag {
-    color: #ff6b6b;
-}
-/* Attribute */
-code .attr {
-    color: #4ecdc4;
-}
-/* PHP-Code */
-code .php {
-    color: #b180e2;
-}
-/* JavaScript */
-code .js {
-    color: #f5e663;
-}
-/* Kommentare */
-code .comment {
-    color: #888;
-    font-style: italic;
+/* Bright Mode */
+.bright-mode .timeline-content {
+    color: var(--text-dark);
 }
 
+.bright-mode pre {
+    background: #f5f5f5;
+    color: var(--text-dark);
+    border-left: 3px solid var(--accent-blue-bright);
+}
+
+.bright-mode code .tag { color: #d63333; }
+.bright-mode code .attr { color: #007788; }
+.bright-mode code .str { color: #008080; }
+.bright-mode code .php { color: #8800cc; }
+.bright-mode code .js { color: #cc7700; }
+.bright-mode code .comment { color: #555; font-style: italic; }
+
+.bright-mode .timeline-bild {
+    filter: sepia(0.2) contrast(1.1) invert(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-section {
+        padding: 1rem;
+        min-height: auto;
+    }
+    
+    .timeline {
+        padding-left: 1rem;
+        min-height: auto;
+    }
+    
+    .timeline-item {
+        padding-left: 0.75rem;
+    }
+    
+    .timeline-item::before {
+        left: -0.25rem;
+    }
+    
+    .timeline-item::after {
+        left: -0.25rem;
+    }
+    
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .timeline-nr {
+        align-self: flex-start;
+    }
+    
+    .timeline-filters {
+        justify-content: flex-start;
+        padding-left: 0.5rem;
+    }
+}
