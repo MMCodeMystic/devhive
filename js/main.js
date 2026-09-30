@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== 3. Burger-Menü - KORRIGIERT =====
+    // ===== 3. Burger-Menü - FIXED =====
     const burgerMenu = document.querySelector('.burger-menu');
     const navbar = document.querySelector('.navbar');
 
