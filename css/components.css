@@ -1,41 +1,4 @@
-/* ===== Cards ===== */
-.cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--accent-blue);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    color: var(--text);
-}
-
-.bright-mode .card {
-    color: var(--text-dark);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-    color: var(--accent-red);
-    margin-bottom: 0.5rem;
-}
-
-@media (min-width: 769px) {
-    .cards {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-/* ===== Timelines ===== */
+/* ===== Timelines =====
 .timeline-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -151,7 +114,7 @@
     filter: sepia(0.2) contrast(1.1) invert(1);
 }
 
-/* ===== Filter-Buttons ===== */
+/* ===== Filter-Buttons =====
 .timeline-filters {
     display: flex;
     gap: 1rem;
@@ -179,7 +142,7 @@
     border-color: var(--accent-blue);
 }
 
-/* ===== Einstellungen-Seite ===== */
+/* ===== Einstellungen-Seite =====
 .settings-container {
     display: grid;
     grid-template-columns: 1fr;

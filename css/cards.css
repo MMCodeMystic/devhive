@@ -1,4 +1,4 @@
-/* ===== Cards Module - KORRIGIERT =====
+/* ===== Cards Module =====
 
 .cards {
     display: grid;
@@ -33,6 +33,25 @@
 .card h3 {
     color: var(--accent-red);
     margin-bottom: 0.5rem;
+}
+
+/* Click Hint */
+.click-hint {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: var(--text);
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.bright-mode .click-hint {
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 /* Video Card Styles */
@@ -83,25 +102,6 @@
 
 .external-link:hover {
     text-decoration: underline;
-}
-
-/* Click Hint */
-.click-hint {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.85rem;
-    color: var(--text);
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-}
-
-.bright-mode .click-hint {
-    color: var(--text-dark);
-    background: rgba(255, 255, 255, 0.3);
 }
 
 /* Project Card with iframe */

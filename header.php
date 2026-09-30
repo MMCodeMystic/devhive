@@ -52,6 +52,7 @@
                 <li><a href="timelines_historisch.php">Historische IT</a></li>
                 <li><a href="projekte.php">Projekte</a></li>
                 <li><a href="einstellungen.php">Einstellungen</a></li>
+                <li><a href="kontakt.php">Kontakt</a></li>
             </ul>
         </nav>
         <!-- Animierte Platonische Körper im Hintergrund -->
