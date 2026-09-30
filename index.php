@@ -38,23 +38,61 @@
         <section id="projekte" class="section">
             <h2 class="section-title">Projekte</h2>
             <div class="cards">
-                <div class="card">
+                <div class="card" data-src="tierheim/index.php">
                     <h3>Tierheim</h3>
                     <p>PHP-basierte Website (extern eingebunden).</p>
-                    <a href="tierheim/" style="display: none;">Zum Tierheim</a>
+                    <span class="click-hint">Klicken zum Öffnen</span>
                 </div>
-                <div class="card">
+                <div class="card" data-src="lernapp/index.php">
                     <h3>Lernsoftware</h3>
                     <p>PHP-basierte Lernanwendung.</p>
-                    <a href="lernapp/" style="display: none;">Zur Lernsoftware</a>
+                    <span class="click-hint">Klicken zum Öffnen</span>
                 </div>
-                <div class="card">
+                <div class="card" data-src="projekte.php">
                     <h3>Sonstige Projekte</h3>
                     <p>Kleinere Experimente und Übungen.</p>
-                    <a href="projekte.php" style="display: none;">Zu den Projekten</a>
+                    <span class="click-hint">Klicken zum Öffnen</span>
                 </div>
             </div>
         </section>
+
+        <style>
+            .card {
+                position: relative;
+                min-height: 300px;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+            .card:hover { transform: scale(1.02); }
+            .click-hint {
+                position: absolute;
+                bottom: 12px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.85rem;
+                color: #888;
+            }
+            .card iframe {
+                width: 100%;
+                height: 300px;
+                border: none;
+                position: absolute;
+                inset: 0;
+            }
+            .card.loaded .click-hint { display: none; }
+        </style>
+
+        <script>
+            document.querySelectorAll('.card[data-src]').forEach(card => {
+                card.addEventListener('click', () => {
+                    if (card.classList.contains('loaded')) return;
+                    const iframe = document.createElement('iframe');
+                    iframe.src = card.dataset.src;
+                    card.appendChild(iframe);
+                    card.classList.add('loaded');
+                });
+            });
+        </script>
     </main>
 
     <?php include 'footer.php'; ?>

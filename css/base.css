@@ -73,7 +73,7 @@ body {
     flex-direction: column;
 }
 
-/* Kachel-Hintergrund für gesamte Seite */
+/* Kachel-Hintergrund für gesamte Seite
 body::before {
     content: '';
     position: fixed;
@@ -84,7 +84,7 @@ body::before {
     background:
             linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
             url('../assets/images/kachel_dark_01.png') repeat;
-    background-size: 200px 200px;
+    background-size: 102px 102px;
     z-index: -1;
     pointer-events: none;
 }
@@ -95,6 +95,8 @@ body::before {
             url('../assets/images/kachel_bright_01.png') repeat;
     background-size: 200px 200px;
 }
+*/
+
 
 /* ===== Hero-Section (Farbverlauf + Zentrierung) ===== */
 .hero {

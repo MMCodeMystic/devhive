@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const randomKachel = Math.floor(Math.random() * kachelCount) + 1;
 
     const style = document.createElement('style');
+    /*
     style.innerHTML = `
         body::before {
             content: '';
@@ -166,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             left: 0;
             width: 100%;
             height: 100%;
+
             background:
                 linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
                 url('assets/images/${kachelPrefix}${randomKachel.toString().padStart(2, '0')}.png') repeat;
@@ -174,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pointer-events: none;
         }
     `;
+    */
     document.head.appendChild(style);
 
     // ===== Skripte dynamisch laden =====
